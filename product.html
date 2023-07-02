@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+
+    <style>
+
+body{
+    background-color: #484448;
+}
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            /* width: 80%; */
+            margin: 1%;
+            /* background-color: black; */
+            
+            
+        }
+        #container .item {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* border: 1px solid gray; */
+  background-color: white;
+  /* margin: 10% */
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* gap: 10px; */
+  
+}
+
+#container img {
+  width: 75%;
+  height: 230px;
+  /* border: 1px solid gray; */
+}
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <!-- append navbar -->
+
+    </div>
+
+    <div id="container">
+        <!-- append data -->
+    </div>
+
+
+
+    <div id="footbar">
+        <!-- append footbar -->
+
+    </div>
+    
+</body>
+</html>
+<script type="module"
+ src="./script/product.js"></script>
