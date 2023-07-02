@@ -2,11 +2,12 @@
 Online platform for cycles
 
 TEAM MEMBERS
-1.Nitish kumar <br/>
-2.Himanshu thakur <br/>
-3.Indrajeet kumar <br/>
-4.kuntal kumar <br/>
-5.yagpath mishra <br/>
+
+1. Nitish kumar <br/>
+2. Himanshu thakur <br/>
+3. Indrajeet kumar gupta <br/>
+4. Kuntal kumar <br/>
+5. Yagpath mishra <br/>
 
 Specialized page's
 
