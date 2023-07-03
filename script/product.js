@@ -1,12 +1,16 @@
+let wishList = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-let mainContainer = document.getElementById("container")
+let mainContainer = document.getElementById("products")
+
+let filterData =null;
 
 let url = 'https://slate-gray-fox-belt.cyclic.app/data'
 async function featchData(){
     try{
-        let res = await fetch(url)
+        let res = await fetch(`${url}?_page=${1}&_limit=20`)
         let data = await res.json()
         console.log(data)
+        filterData = data
         displayData(data)
     }
     catch(err){
@@ -32,9 +36,34 @@ function displayData(data){
         price.textContent = "₹ " + ele.price
 
         let btn = document.createElement("button")
-        btn.textContent ="Add to card"
+        btn.setAttribute("class", "addItem")
+        btn.innerHTML ="🤍"
+        // btn.style.color="red"
+        btn.addEventListener('click',function(){
+            addToWishList(ele)
+        })
+
+        
 
         item.append(image,title,price,btn)
         mainContainer.append(item)
     })
 }
+
+
+
+function addToWishList(item){
+    wishList.push(item)
+    localStorage.setItem("wishlist",JSON.stringify(wishList))
+}
+
+let category = document.getElementById("category")
+
+category.addEventListener("change", ()=>{
+    let filtered = filterData.filter((ele)=>{
+        if(ele.catrgory === category.value){
+            return ele
+        }
+    })
+    displayData(filtered)
+})

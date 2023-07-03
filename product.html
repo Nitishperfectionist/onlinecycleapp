@@ -5,43 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
 
-    <style>
-
-body{
-    background-color: #484448;
-}
-        #container{
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            /* width: 80%; */
-            margin: 1%;
-            /* background-color: black; */
-            
-            
-        }
-        #container .item {
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  /* border: 1px solid gray; */
-  background-color: white;
-  /* margin: 10% */
-  padding: 8px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /* gap: 10px; */
-  
-}
-
-#container img {
-  width: 75%;
-  height: 230px;
-  /* border: 1px solid gray; */
-}
-    </style>
+ 
+ <link rel="stylesheet" href="./style/product.css">
 </head>
 <body>
     <div id="navbar">
@@ -49,9 +14,97 @@ body{
 
     </div>
 
-    <div id="container">
-        <!-- append data -->
+<!-- main body -->
+<div id="main">
+    <div id="sorting">
+        <h4>SORT BY:</h4>
+        <select id="select">
+            <option value="relevance">Relevance</option>
+            <option value="h-l">Price High-Low</option>
+            <option value="l-h">Price Low-High</option>
+        </select>
+        <h4>FILTERS</h4>
+
+
+    
     </div>
+    <div id="maindiv">
+        <div id="filterdiv">
+            <h2>MOUNTAIN</h2>
+
+            
+            <div>
+                <select id="category">
+                    <option value="">CATEGORY</option>
+                    <option value="Off_roading">Off Roading</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Kid">Kid</option>
+                </select>
+            </div>
+            
+            <div>
+                <button>MATERIAL</button>
+                <div>+</div>
+            </div>
+            
+            <div>
+                <button>SIZE</button>
+                <div>+</div>
+            </div>
+            
+            <div>
+                <button>COLOUR</button>
+                <div>+</div>
+            </div>
+            
+            <div>
+                <button>BRAKE TYPE</button>
+                <div>+</div>
+            </div>
+            
+            <div>
+                <button>SUSPENSION</button>
+                <div>+</div>
+            </div>
+    
+
+    
+            <div>
+                <button>WHEELSIZE</button>
+                <div>+</div>
+            </div>
+    
+            <div>
+                <button>MODEL YEAR</button>
+                <div>+</div>
+            </div>
+    
+           
+    
+        </div>
+       <div id="products">
+
+       </div>
+           
+    </div>
+    <div class="container">
+        <div class="pagination">
+            <ul>
+                <li class="link" value="1">1</li>
+                <li class="link" value="2">2</li>
+                <li class="link" value="3">3</li>
+                <li class="link" value="4">4</li>
+                <li class="link" value="5">5</li>
+                <li class="link" value="6">6</li>
+                <li class="link" value="7">7</li>
+                <li class="link" value="8">8</li>
+                <li class="link" value="9">9</li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>
 
 
 
