@@ -166,3 +166,11 @@ background-color: white;
  margin-right: 15px;
 }
 
+
+
+#filterdiv select{
+    background-color: #484448;
+    color: white;
+    border: none;
+
+}
