@@ -8,7 +8,7 @@
   </head>
   <body>
     <h2>Create an Account</h2>
-    <form action="/signup" method="post" onsubmit="return validateForm()">
+    <form action="signup.html">
       <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
@@ -20,6 +20,12 @@
           >Show</span
         >
       </div>
+      <!-- Password strength meter -->
+      <div id="password-strength" class="password-strength">
+        <div class="meter"></div>
+        <div class="text"></div>
+      </div>
+
       <div>
         <label for="confirm-password">Confirm Password:</label>
         <input
@@ -39,8 +45,8 @@
       </div>
     </form>
     <div>
-        <button type="button" id="button">Sign Up</button>
-      </div>
+      <button type="button" id="button">Sign Up</button>
+    </div>
   </body>
 </html>
 <script src="signup.js"></script>
