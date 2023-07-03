@@ -25,3 +25,58 @@
 </body>
 </html>
 <script src="signin.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+  } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+  
+
+  // firebase library data
+  const firebaseConfig = {
+    apiKey: "AIzaSyBWhvmUNJPn6Dp40V2cbp88fhzenmevkoE",
+
+    authDomain: "construct-week-unit-5.firebaseapp.com",
+
+    projectId: "construct-week-unit-5",
+
+    storageBucket: "construct-week-unit-5.appspot.com",
+
+    messagingSenderId: "786633313399",
+
+    appId: "1:786633313399:web:fd8b498caa195036438a72",
+  };
+
+  // Initializing Firebase
+
+  const app = initializeApp(firebaseConfig);
+  console.log(app); // checking if our firebase is connected or not
+const auth = getAuth();
+
+document.getElementById("button").addEventListener("click",function() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    alert("User signed in");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.error(errorMessage);
+  });
+
+});
+
+
+
+
+  </script>
