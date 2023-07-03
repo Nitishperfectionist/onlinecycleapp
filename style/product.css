@@ -174,3 +174,19 @@ background-color: white;
     border: none;
 
 }
+
+@media only screen and (min-width: 421px) and (max-width: 720px) {
+    #products {
+          grid-template-columns: repeat(2,1fr);
+    }
+
+
+}
+
+@media only screen and (min-width: 0px) and (max-width: 420px) {
+    #products {
+          grid-template-columns: repeat(1,1fr);
+    }
+
+}
+
