@@ -31,4 +31,4 @@ document.getElementById('price').textContent = `€ ${price}`;
 function home() {
   // Redirect to index.html when the home element is clicked
   location.href = "index.html";
-}
+} 
