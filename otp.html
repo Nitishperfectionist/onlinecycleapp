@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="https://www.specialized.com/_ui/addons/specializedstorefrontaddon/desktop/common/images/favicon.ico?v=1.1" />
+  <title>OTP Verification</title>
+  <link rel="stylesheet" href="css/otp.css" />
+  <link rel="icon" type="images/x-icon" href="https://bstudio-assets.azureedge.net/assets-builder/uploads/application/new_app_builder_icon/5b8cd7920b82ec2d09173049/Netmeds.svg" sizes="96x96" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/f5664c1180.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&family=Roboto+Condensed:wght@400;700&family=Wix+Madefor+Text:wght@600&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+  <div id="navbar">
+    <!-- nav -->
+  
+  </div>
+  <div id="header"></div>
+  <h1 id="verify">OTP VERIFICATION</h1>
+  <div id="para">
+    <p>
+      An OTP (One Time Password) has been sent to your registered email. Please enter the OTP in the field below to verify your bank account.
+    </p>
+  </div>
+  <div class="Container">
+    <h1>ENTER OTP</h1>
+    <div class="UserInput">
+      <input type="text" id="First" maxlength="1" />
+      <input type="text" id="Second" maxlength="1" />
+      <input type="text" id="Third" maxlength="1" />
+      <input type="text" id="Fourth" maxlength="1" />
+      <input type="text" id="Fifth" maxlength="1" />
+    </div>
+    <div id="btn">
+      <button type="submit" id="confirm">CONFIRM</button>
+      <button id="resend">Resend OTP</button>
+    </div>
+  </div>
+</body>
+<script>
+function clearOTPFields() {
+  document.getElementById("First").value = "";
+  document.getElementById("Second").value = "";
+  document.getElementById("Third").value = "";
+  document.getElementById("Fourth").value = "";
+  document.getElementById("Fifth").value = "";
+}
+
+document.getElementById("confirm").addEventListener("click", submitotp);
+
+function submitotp() {
+  var otp = {
+    First: document.getElementById("First").value,
+    Second: document.getElementById("Second").value,
+    Third: document.getElementById("Third").value,
+    Fourth: document.getElementById("Fourth").value,
+    Fifth: document.getElementById("Fifth").value,
+  };
+
+  var storedOTP = JSON.parse(localStorage.getItem("OTP"));
+  var enteredOTP = Object.values(otp).join("");
+
+  if (enteredOTP === storedOTP) {
+    alert("OTP verification successful!");
+    location.href = "index.html";
+  } else {
+    alert("Invalid OTP. Please try again.");
+    clearOTPFields()
+  }
+}
+
+document.getElementById("resend").addEventListener("click", sent);
+
+function sent() {
+  var OTP = generateOTP(5); // Generate a random 5-digit OTP
+  localStorage.setItem("OTP", JSON.stringify(OTP));
+
+  alert("OTP successfully resent to your registered email. " + OTP);
+}
+
+function generateOTP(length) {
+  var otp = "";
+  for (var i = 0; i < length; i++) {
+    otp += Math.floor(Math.random() * 10);
+  }
+  return otp;
+}
+
+document.getElementById("First").addEventListener("input", moveToNextInput);
+document.getElementById("Second").addEventListener("input", moveToNextInput);
+document.getElementById("Third").addEventListener("input", moveToNextInput);
+document.getElementById("Fourth").addEventListener("input", moveToNextInput);
+document.getElementById("Fifth").addEventListener("input", moveToNextInput);
+
+function moveToNextInput(event) {
+  var input = event.target;
+  var maxLength = parseInt(input.getAttribute("maxlength"));
+  var inputValue = input.value;
+
+  if (inputValue.length >= maxLength) {
+    // Get the next input element
+    var nextInput = input.nextElementSibling;
+    if (nextInput) {
+      nextInput.focus();
+    }
+  }
+}
+</script>
+</html>
