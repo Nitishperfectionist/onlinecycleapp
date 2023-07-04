@@ -1,3 +1,4 @@
+
 function togglePasswordVisibility() {
   var passwordInput = document.getElementById("password");
   var passwordToggle = document.getElementById("password-toggle");
@@ -11,6 +12,8 @@ function togglePasswordVisibility() {
   }
 }
 
+ // signup validation if password is not matching
+ 
 
 // Function to calculate the password strength
 function calculatePasswordStrength() {

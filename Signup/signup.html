@@ -8,7 +8,7 @@
   </head>
   <body>
     <h2>Create an Account</h2>
-    <form action="signup.html">
+    <form action="signup.html" id="signup-form" method="post">
       <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
@@ -34,7 +34,9 @@
           name="confirm-password"
           required
         />
+        <span id="password-error" class="error"></span>
       </div>
+
       <div>
         <label for="first-name">First Name:</label>
         <input type="text" id="first-name" name="first-name" required />
@@ -43,13 +45,14 @@
         <label for="last-name">Last Name:</label>
         <input type="text" id="last-name" name="last-name" required />
       </div>
+      <div>
+        <button type="submit" id="button">Sign Up</button>
+      </div>
     </form>
-    <div>
-      <button type="button" id="button">Sign Up</button>
-    </div>
   </body>
 </html>
 <script src="signup.js"></script>
+
 <script type="module">
   // Import the functions you need from the SDKs you need
 
@@ -81,25 +84,61 @@
 
   const auth = getAuth();
 
-  document.getElementById("button").addEventListener("click", function () {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    let first_name = document.getElementById("first-name").value;
-    let last_name = document.getElementById("last-name").value;
+  const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirm-password");
+const passwordError = document.getElementById("password-error");
 
-    // creating a new registeration
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        alert("Signup successful");
-        console.log(user);
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
-  });
+// Flag to check if there are errors or not
+let flag = false;
+
+// Confirm password validation
+confirmPassword.addEventListener("input", function () {
+  const confirmPasswordValue = confirmPassword.value;
+  const passwordValue = password.value;
+
+  if (confirmPasswordValue.length > 0) {
+    if (confirmPasswordValue !== passwordValue) {
+      passwordError.textContent = "Password does not match!";
+      flag = false;
+    } else {
+      passwordError.textContent = "";
+      flag = true;
+    }
+  } else {
+    passwordError.textContent = "Please enter confirm password";
+    flag = false;
+  }
+});
+
+// Form submit event listener
+document.getElementById("signup-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent default form submission
+
+  if (!flag) {
+    alert("Please check input fields");
+    return;
+  }
+
+  const email = document.getElementById("email").value;
+  const passwordValue = password.value;
+  const firstName = document.getElementById("first-name").value;
+  const lastName = document.getElementById("last-name").value;
+
+  // Creating a new registration
+  createUserWithEmailAndPassword(auth, email, passwordValue)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      alert("Signup successful");
+      console.log(user);
+      // Perform any additional actions or redirection here
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage);
+      // Handle error message or display appropriate feedback to the user
+    });
+});
+
 </script>
