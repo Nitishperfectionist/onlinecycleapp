@@ -6,12 +6,44 @@ let filterData =null;
 let materailFilter =null;
 
 let url = 'https://slate-gray-fox-belt.cyclic.app/data'
+
+
+// pagination********************
+
+let pageNumber 
+let len = url.length/6
+let resutl = Math.round(len)
+let n = resutl;
+// console.log(n)
+
+// pagination function
+let pagination = document.getElementById("pagination1")
+
+for (let i =1; i <=n; i ++){
+  let btn1 = document.createElement("button")
+  btn1.setAttribute("class","pagination-button")
+  btn1.textContent = i
+// pageNumber = i
+
+btn1.addEventListener("click", ()=>{
+  pageNumber =i
+  featchData()
+ 
+
+})
+pagination.append(btn1)
+
+
+}
+
+
+
 async function featchData(){
     try{
-        let res = await fetch(`${url}?_page=${1}&_limit=9`)
+        let res = await fetch(`${url}?_page=${pageNumber}&_limit=6`)
         let data = await res.json()
         console.log(data)
-        filterData = data
+        filterData = data 
         materailFilter = data
         displayData(data)
     }
@@ -157,3 +189,31 @@ year.addEventListener("change", ()=>{
     displayData(filtered)
 })
 
+// sorting price
+
+
+let select = document.getElementById("select");
+select.addEventListener("change",()=>{
+    let filtered = filterData.filter((ele) =>{
+        if (ele.price < 20000){
+            return ele
+        }
+
+
+    })
+    displayData(filtered)
+    
+})
+// let select1 = document.getElementById("select");
+// select1.addEventListener("change",()=>{
+//     let filtered = filterData.filter((ele) =>{
+//         if (ele.price > 20000){
+//             return ele
+//         }
+
+
+//     })
+//     displayData(filtered)
+    
+// })
+  

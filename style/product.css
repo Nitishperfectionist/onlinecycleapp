@@ -190,3 +190,17 @@ background-color: white;
 
 }
 
+#pagination1{
+ 
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 200px;
+
+}
+.pagination-button{
+    margin-left: 40px;
+    padding: 15px;
+    background-color: #484448;
+    border-radius: 5px;
+    color: white;
+}
