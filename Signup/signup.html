@@ -8,7 +8,7 @@
   </head>
   <body>
     <h2>Create an Account</h2>
-    <form action="signup.html" id="signup-form" method="post">
+    <form action="signin.html" id="signup-form" method="post">
       <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
@@ -46,8 +46,65 @@
         <input type="text" id="last-name" name="last-name" required />
       </div>
       <div>
-        <button type="submit" id="button">Sign Up</button>
+        <label for="email-offers">
+          <input type="checkbox" id="email-offers" name="email-offers" />
+          <span class="checkbox-label"
+            >Sign Me Up To Receive Email Offers And Updates</span
+          >
+        </label>
       </div>
+
+      <div>
+        <label for="terms-conditions">
+          <input
+            type="checkbox"
+            id="terms-conditions"
+            name="terms-conditions"
+            onchange="checkSignupButton()"
+          />
+          <span class="checkbox-label"
+            >I Accept The Specialized Terms &amp; Conditions</span
+          >
+        </label>
+      </div>
+      <div id="terms-conditions-error" class="error-message"></div>
+
+      <div>
+        <label for="terms-of-use">
+          <input
+            type="checkbox"
+            id="terms-of-use"
+            name="terms-of-use"
+            onchange="checkSignupButton()"
+          />
+          <span class="checkbox-label"
+            >I Accept The Specialized Terms Of Use</span
+          >
+        </label>
+      </div>
+      <div id="terms-of-use-error" class="error-message"></div>
+
+      <div>
+        <p>
+          I acknowledge Specialized will use my information in accordance with
+          its
+          <a
+            href="https://www.specialized.com/us/en/privacy-policy"
+            target="_blank"
+            >Privacy Policy</a
+          >.
+        </p>
+      </div>
+
+      <div>
+        <button type="submit" id="signup-button" disabled>
+          Create Account
+        </button>
+      </div>
+
+      <p id="login">
+        Already have an account? <a href="../Signin/signin.html">Login</a>
+      </p>
     </form>
   </body>
 </html>
@@ -85,60 +142,61 @@
   const auth = getAuth();
 
   const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirm-password");
-const passwordError = document.getElementById("password-error");
+  const confirmPassword = document.getElementById("confirm-password");
+  const passwordError = document.getElementById("password-error");
 
-// Flag to check if there are errors or not
-let flag = false;
+  // Flag to check if there are errors or not
+  let flag = false;
 
-// Confirm password validation
-confirmPassword.addEventListener("input", function () {
-  const confirmPasswordValue = confirmPassword.value;
-  const passwordValue = password.value;
+  // Confirm password validation
+  confirmPassword.addEventListener("input", function () {
+    const confirmPasswordValue = confirmPassword.value;
+    const passwordValue = password.value;
 
-  if (confirmPasswordValue.length > 0) {
-    if (confirmPasswordValue !== passwordValue) {
-      passwordError.textContent = "Password does not match!";
-      flag = false;
+    if (confirmPasswordValue.length > 0) {
+      if (confirmPasswordValue !== passwordValue) {
+        passwordError.textContent = "Password does not match!";
+        flag = false;
+      } else {
+        passwordError.textContent = "";
+        flag = true;
+      }
     } else {
-      passwordError.textContent = "";
-      flag = true;
+      passwordError.textContent = "Please enter confirm password";
+      flag = false;
     }
-  } else {
-    passwordError.textContent = "Please enter confirm password";
-    flag = false;
-  }
-});
+  });
 
-// Form submit event listener
-document.getElementById("signup-form").addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent default form submission
+  // Form submit event listener
+  document
+    .getElementById("signup-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
 
-  if (!flag) {
-    alert("Please check input fields");
-    return;
-  }
+      if (!flag) {
+        alert("Please check input fields");
+        return;
+      }
 
-  const email = document.getElementById("email").value;
-  const passwordValue = password.value;
-  const firstName = document.getElementById("first-name").value;
-  const lastName = document.getElementById("last-name").value;
+      const email = document.getElementById("email").value;
+      const passwordValue = password.value;
+      const firstName = document.getElementById("first-name").value;
+      const lastName = document.getElementById("last-name").value;
 
-  // Creating a new registration
-  createUserWithEmailAndPassword(auth, email, passwordValue)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      alert("Signup successful");
-      console.log(user);
-      // Perform any additional actions or redirection here
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage);
-      // Handle error message or display appropriate feedback to the user
+      // Creating a new registration
+      createUserWithEmailAndPassword(auth, email, passwordValue)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          alert("Signup successful");
+          console.log(user);
+          // Perform any additional actions or redirection here
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorMessage);
+          // Handle error message or display appropriate feedback to the user
+        });
     });
-});
-
 </script>
