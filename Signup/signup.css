@@ -30,7 +30,7 @@ label {
 input[type="email"],
 input[type="password"],
 input[type="text"] {
-  width: 100%;
+  width: 95%;
   padding: 15px;
   margin-bottom: 5%;
   border: 1px solid #414141;
@@ -39,9 +39,8 @@ input[type="text"] {
 }
 
 button {
-  display: block;
-  width: 100%;
-  margin: 0 auto; /* Center the button */
+ width: 100%;
+  margin: auto; /* Center the button */
   margin-top: 10%;
   background-color: #252525;
   color: #fff;
@@ -159,7 +158,8 @@ p {
   z-index: 9999;
   opacity: 0;
   animation: popupAnimation 0.5s ease forwards;
-  width: 80%; /* Adjust the width as per your requirement */
+  width: 60%; /* Adjust the width as per your requirement */
+  max-width: 600px;/* Set a maximum width for responsiveness */
 }
 
 .popup h3 {
@@ -207,12 +207,17 @@ p {
   h2 {
     margin-bottom: 1%;
   }
+  .popup {
+    width: 70%;
+  }
 }
 @media (min-width:700px) and (max-width:1200px) {
   form {
     width: 70%;
     margin: auto;
   }
-  
+  .popup {
+    width: 70%;
+  }
 
 }
