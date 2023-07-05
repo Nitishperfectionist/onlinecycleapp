@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signin Page</title>
-    <link rel="stylesheet" href="signin.css">
-</head>
-<body>
+    <link rel="stylesheet" href="signin.css" />
+  </head>
+  <body>
     <h2>Sign In to your Account</h2>
-    <form action="/signin" method="post" onsubmit="return validateForm()">
+    <form action="/signin" id = "signin-form" method="post">
       <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
@@ -17,44 +17,48 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required />
         <span id="password-toggle" onclick="togglePasswordVisibility()"
-          >Show</span>
+          >Show</span
+        >
       </div>
       <div class="remember-forgot">
-
         <div>
           <label for="remember-me">
-            <input
-              type="checkbox"
-              id="rememberme"
-              name="rememberme"
-            />
-            <span class="checkbox-label"
-              >Remember ME</span
-            >
+            <input type="checkbox" id="rememberme" name="rememberme" />
+            <span class="checkbox-label">Remember ME</span>
           </label>
         </div>
 
         <div>
-            <a href="#" class="forgot-password">Forgot password?</a>
+          <a href="#" class="forgot-password">Forgot password?</a>
         </div>
+      </div>
 
-      </div>
-        
       <p>
-          I accept the Specialized Terms of Use and acknowledge Specialized will use my information in accordance with its
-          <a
-            href="https://www.specialized.com/us/en/privacy-policy"
-            target="_blank"
-            >Privacy Policy</a
-          >.
-        </p>
-      
+        I accept the Specialized Terms of Use and acknowledge Specialized will
+        use my information in accordance with its
+        <a
+          href="https://www.specialized.com/us/en/privacy-policy"
+          target="_blank"
+          >Privacy Policy</a
+        >.
+      </p>
+
       <div>
-        <button type="button" id="button">SignIn</button>
+        <button type="submit" id="button">Sign In</button>
       </div>
+      <p id="signup">
+      <a href="../Signup/signup.html">Create Account</a>
+      </p>
     </form>
-    
-</body>
+     <!-- Popup markup -->
+  <div class="popup" id="popup" style="display: none;">
+  <h3>SignIn Successful</h3>
+  <div class="loading-gif">
+    <img src="../Images/Rolling-1s-200px.gif" alt="Loading">
+  </div>
+  <p>Redirecting to Homepage...</p>
+</div>
+  </body>
 </html>
 <script src="signin.js"></script>
 <script type="module">
@@ -66,7 +70,6 @@
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
   } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-  
 
   // firebase library data
   const firebaseConfig = {
@@ -87,28 +90,36 @@
 
   const app = initializeApp(firebaseConfig);
   console.log(app); // checking if our firebase is connected or not
-const auth = getAuth();
+  const auth = getAuth();
+  
 
-document.getElementById("button").addEventListener("click",function() {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+
+  // Sign-in form submit event listener
+      document.getElementById("signin-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
     signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    alert("User signed in");
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.error(errorMessage);
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log("User signed in:", user);
+        document.getElementById("popup").style.display = "block";
+          // Perform any additional actions or redirection here
+          
+          // Redirect to homepage after 2 seconds
+          setTimeout(() => {
+            window.location.href = "../Signin/signin.html";
+          }, 2000);
+        })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(errorMessage);
+        // Display the error message to the user
+        alert(errorMessage);
+      });
   });
-
-});
-
-
-
-
-  </script>
+</script>
