@@ -1,0 +1,281 @@
+body{
+    background-color: #1c1c1c;
+
+}
+
+
+/* **********************change colors ************************ */
+
+.changeColor{
+    color: goldenrod;
+}
+.changeColorYellow{
+    color: yellow;
+}
+
+#parent{
+
+    display: flex;
+    
+    gap: 40px;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    
+    }
+    #left{
+        padding: 0;
+        /* border: 2px solid red; */
+        width: 50%;
+    }
+    #right{
+        margin: 0;
+    }
+    #left div{
+        margin-top: 20px;
+    }
+
+#mainImage {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+
+#diffAngle{
+    width: 98%;
+display: flex;
+/* justify-content: space-between; */
+gap: 25px;
+}
+#diffAngle img{
+width: 110%;
+height: 60%;
+border-radius: 10px;
+
+}
+
+#charecterstics{
+    border: 2px solid black;
+    height: 24%;
+    /* width: 69%; */
+     padding-left: 25px;
+     padding-right:  25px; 
+     margin-top: -20px;
+
+    background-color: white;
+    border-radius: 10px;
+
+}
+#show_more {
+    margin-top: 20px;
+    margin-bottom: -20px;
+
+     text-align: center; 
+}
+
+
+#char_details{
+    margin-top: 0px;
+}
+#char_details div {
+    display: flex;
+    justify-content: space-between;
+} 
+
+#char_details div p{
+    margin: 0px;
+}
+#char_details div h5{
+    margin: 0px;
+}
+#description{
+    border: 2px solid black;
+    height: 24%;
+    /* width: 69%; */
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+#reviews{
+    border: 2px solid black;
+    height: 15%;
+    /* width: 69%; */
+     padding: 25px; 
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content:space-between;
+
+}
+#arrow div{
+    height: 200px;
+
+
+}
+#lReview{
+    width: 50%;
+}
+ #arrow{
+    display: flex;
+    gap: 50%;
+justify-content: space-between;
+}
+
+/* ********************************************************************** */
+
+#name{
+    color: white;
+}
+
+#payment{
+    border: 2px solid black;
+    height: 15%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+
+
+
+#paymentBottom{
+display: flex;
+gap: 20px   ;
+
+
+}
+#paymentBottom div{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;        text-align: center;
+
+
+}
+#paymentBottom img{
+width: 100px;
+height: 50px;
+}
+
+
+#self_delivery{
+    border: 2px solid black;
+    height: 18%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+#selfDelivery_bottom{
+
+    display: flex;
+
+}
+#selfDelivery_top{
+    display: flex;
+
+}
+
+#homeDelivery_bottom{
+    display: flex;
+    justify-content: space-around;
+    }
+#homeDelivery{
+    border: 2px solid black;
+    height: 25%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+
+}
+#homeDelivery img{
+    width: 100px;
+}
+#homeDelivery_bottom div{
+    width: 40%;
+}
+
+
+#selfDelivery_location {
+    border: 2px solid black;
+    height: 5%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+
+#warranty {
+    border: 2px solid black;
+    height: 10%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+
+#exchange {
+    border: 2px solid black;
+    height: 10%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+#arrow{
+    justify-content: right;
+}
+
+
+/* ***************right*************************************** */
+
+#social{
+        display: flex;
+        justify-content: space-between;
+color: white  ;
+width: 97%;
+}
+#rating{
+    display: flex;
+    gap: 10px;
+}
+#rating p{
+    margin-top: 0px;
+}
+#comments{
+    gap: 10px;
+    display: flex;
+}
+#comments p{
+    margin-top: 0px;
+}
+#color_size{
+    display: flex;
+    gap: 50px;
+    color: white;
+}
+#blackColor{
+    border: 2px solid white;
+    border-radius: 10px;
+}
+#redColor{
+    border: 2px solid white;
+    border-radius: 10px;
+
+}
+#mrp{
+    text-decoration:line-through;
+    
+}
+#price{
+    color: white;
+}
