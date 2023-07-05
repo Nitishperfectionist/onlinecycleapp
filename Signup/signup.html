@@ -106,6 +106,14 @@
         Already have an account? <a href="../Signin/signin.html">Login</a>
       </p>
     </form>
+    <!-- Popup markup -->
+  <div class="popup" id="popup" style="display: none;">
+  <h3>Signup Successful</h3>
+  <div class="loading-gif">
+    <img src="../Images/Rolling-1s-200px.gif" alt="Loading">
+  </div>
+  <p>Redirecting to login...</p>
+</div>
   </body>
 </html>
 <script src="signup.js"></script>
@@ -188,9 +196,15 @@
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          alert("Signup successful");
+          ("Signup successful");
           console.log(user);
+          document.getElementById("popup").style.display = "block";
           // Perform any additional actions or redirection here
+          
+          // Redirect to homepage after 2 seconds
+          setTimeout(() => {
+            window.location.href = "../Signin/signin.html";
+          }, 2000);
         })
         .catch((error) => {
           const errorCode = error.code;
