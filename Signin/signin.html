@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="signin.css">
 </head>
 <body>
-    <h2>SignIn to your Account</h2>
+    <h2>Sign In to your Account</h2>
     <form action="/signin" method="post" onsubmit="return validateForm()">
       <div>
         <label for="email">Email:</label>
@@ -18,10 +18,42 @@
         <input type="password" id="password" name="password" required />
         <span id="password-toggle" onclick="togglePasswordVisibility()"
           >Show</span>
-    </form>
-    <div>
+      </div>
+      <div class="remember-forgot">
+
+        <div>
+          <label for="remember-me">
+            <input
+              type="checkbox"
+              id="rememberme"
+              name="rememberme"
+            />
+            <span class="checkbox-label"
+              >Remember ME</span
+            >
+          </label>
+        </div>
+
+        <div>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+      </div>
+        
+      <p>
+          I accept the Specialized Terms of Use and acknowledge Specialized will use my information in accordance with its
+          <a
+            href="https://www.specialized.com/us/en/privacy-policy"
+            target="_blank"
+            >Privacy Policy</a
+          >.
+        </p>
+      
+      <div>
         <button type="button" id="button">SignIn</button>
       </div>
+    </form>
+    
 </body>
 </html>
 <script src="signin.js"></script>
