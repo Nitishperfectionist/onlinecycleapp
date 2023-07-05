@@ -1,8 +1,6 @@
 let sumMRP=0;
 let data= JSON.parse(localStorage.getItem("cart-list")) || []
 
-// data.push(obj);
-// console.log(data);
 
 let cartItem=document.querySelector("#cart");
 let sum=0;
@@ -46,7 +44,7 @@ data.map((ele,i)=>{
       sum+=ele.price; 
       sumMRP+=ele.mrp
     finmrp.textContent="€ "+ ele.price *qnty.value ;
-    // sum+=finmrp;0
+    
     disc.addEventListener('click',function(){
         if(qnty.value==1){
             alert("Minimum Quantity could be 1")
@@ -56,7 +54,7 @@ data.map((ele,i)=>{
             sumMRP-=ele.mrp
             finmrp.textContent="€ "+ ele.price *qnty.value ;
             localStorage.setItem("cart_Value",sum);
-            // final price
+    
     document.getElementById("displayMRP").textContent= "€" + sumMRP 
     document.getElementById("finalAmt").textContent= "€" +sum 
         }
@@ -67,7 +65,7 @@ data.map((ele,i)=>{
         sum+=ele.price 
         sumMRP+=ele.mrp
         finmrp.textContent="€ "+ ele.price*qnty.value ;   
-        // final price
+        
     document.getElementById("displayMRP").textContent= "€" + sumMRP 
     document.getElementById("finalAmt").textContent= "€" +sum 
     localStorage.setItem("cart_Value",sum);
@@ -88,13 +86,13 @@ data.map((ele,i)=>{
         sum-=ele.price 
         sumMRP-=ele.mrp
         localStorage.setItem("cart",JSON.stringify(data));
-        // final price
+
     document.getElementById("displayMRP").textContent= "€" + sumMRP 
     document.getElementById("finalAmt").textContent= "€" +sum 
         displayCart(data);  
     });
 
-    // append________________
+    
     divImg.append(img);
     del.append(delimg);
     divDetails.append(productdescriptionname, code, MRP, mrp);
@@ -103,10 +101,10 @@ data.map((ele,i)=>{
     delet.append(del);
     div.append(divImg, divDetails, qty, divFinalmrp, delet);
     cartItem.append(div);     
-    // console.log(sum)     
+       
     localStorage.setItem("cart_Value",sum);
 
-    // final price
+    
     document.getElementById("displayMRP").textContent= "€" + sumMRP 
  document.getElementById("finalAmt").textContent= "€" +sum 
 });

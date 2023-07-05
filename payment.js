@@ -1,34 +1,72 @@
 document.querySelector('form').addEventListener("submit", carddata);
 
 function carddata(event) {
-  event.preventDefault(); // Prevent the form from submitting and refreshing the page
+  event.preventDefault();
+  const emailInput = document.getElementById('email');
+  const cardNumInput = document.getElementById('cardNum');
+  const cvvInput = document.getElementById('cvv');
 
-  // Get the value of the cardNum input field
-  let cardNum = document.getElementById('cardNum').value;
-  console.log(cardNum);
+  
+  const email = emailInput.value;
+  const cardNum = cardNumInput.value.replace(/\s/g, ''); // Remove whitespace from card number
+  const cvv = cvvInput.value;
 
-  // Check if the cardNum is a 16-digit number
-  let cardNumPattern = /^\d{16}$/; // Regular expression to match a 16-digit number
-  if (cardNumPattern.test(cardNum)) {
-    // If cardNum is valid, add a click event listener to the btn element
-    var btn = document.getElementById("btn");
-    btn.addEventListener("click", () => {
-      // Redirect to otp.html when the button is clicked
-      location.href = "otp.html";
-    });
-  } else {
-    // If cardNum is invalid, show an alert message
+
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  const cardNumPattern = /^\d{16}$/; // Pattern for 16-digit card number
+  const cvvPattern = /^\d{3}$/; // Pattern for 3-digit CVV
+
+
+   if (!emailPattern.test(email)) {
+    alert("Please enter a valid Gmail address like example@gmail.com");
+    return;
+  }
+
+  
+  if (!cardNumPattern.test(cardNum)) {
     alert("Please enter a valid 16-digit card number.");
+    return;
+  }
+
+  if (!cvvPattern.test(cvv)) {
+    alert("Please enter a valid 3-digit CVV.");
+    return;
+  }
+ 
+
+  var btn = document.getElementById("btn");
+  btn.addEventListener("click", () => {
+    location.href = "otp.html";
+  });
+}
+
+const price = localStorage.getItem('cart_Value') || 0;
+document.getElementById('price').textContent = `€ ${price}`;
+
+function formatCardNumber(e) {
+  const input = e.target;
+  const trimmedInput = input.value.replace(/\s+/g, ''); // Remove existing whitespaces
+  const formattedInput = trimmedInput.replace(/(.{4})/g, '$1 '); // Add space after every 4 characters
+  input.value = formattedInput;
+
+  if (formattedInput.length > 19) {
+    input.value = formattedInput.slice(0, 19); // Limit to 16 digits
   }
 }
 
-// Get the cart value from localStorage or set it to 0 if not found
-let price = localStorage.getItem('cart_Value') || 0;
+function formatCVV(e) {
+  const input = e.target;
+  const formattedInput = input.value.slice(0, 3); // Limit to 3 digits
+  input.value = formattedInput;
+}
 
-// Set the text content of the element with id "price" to display the cart value
-document.getElementById('price').textContent = `€ ${price}`;
+const cardNumInput = document.getElementById('cardNum');
+cardNumInput.addEventListener('input', formatCardNumber);
+
+const cvvInput = document.getElementById('cvv');
+cvvInput.addEventListener('input', formatCVV);
 
 function home() {
-  // Redirect to index.html when the home element is clicked
   location.href = "index.html";
-} 
+}
+

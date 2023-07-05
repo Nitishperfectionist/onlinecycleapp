@@ -23,7 +23,7 @@
       <nav id="nav">
         
               <div id="home" onclick="home()">
-                  <img src="../logos/home-logo.png" alt="home">
+                  <img src="./logos/home-logo.png" alt="home">
               </div>
               <div id="nav-mid">
                  <div>
@@ -45,7 +45,7 @@
               </div>
               <div id="nav-end">
                   <a href="wishlist.html"><i class="fa-regular fa-heart fa-xl"></i></a>
-                  <a href="#"><img src="../logos/compare.svg" alt=""></a>
+                  <a href="#"><img src="./logos/compare.svg" alt=""></a>
                   <a href="cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
                   <a href="login.html" class="profile"><i class="fa-regular fa-user fa-lg"></i></a>
                   
@@ -56,7 +56,7 @@
   <!-- subnav -->
   <nav id="subnav">
       <div>
-          <img src="../logos/icons8-location-40.png" alt="">
+          <img src="./logos/icons8-location-40.png" alt="">
           <p>Your location: <span>Kiev</span></p>
       </div>
       <div>
@@ -91,13 +91,13 @@
     <div class="footer_top">
         <div class="Social_media">
             <div>
-                <img src="../logos/home-logo.png" alt="">
+                <img src="./logos/home-logo.png" alt="">
             </div>
             <div>
-                <a href="#"><img src="../logos/icons8-youtube.svg" alt=""></a>
-                <a href="#"><img src="../logos/icons8-facebook.svg" alt=""></a>
-                <a href="#"><img src="../logos/icons8-linkedin-32.png" alt=""></a>
-                <a href="#"><img src="../logos/icons8-instagram.svg" alt=""></a>
+                <a href="#"><img src="./logos/icons8-youtube.svg" alt=""></a>
+                <a href="#"><img src="./logos/icons8-facebook.svg" alt=""></a>
+                <a href="#"><img src="./logos/icons8-linkedin-32.png" alt=""></a>
+                <a href="#"><img src="./logos/icons8-instagram.svg" alt=""></a>
             </div>
         </div>
         <div class="abouth">
@@ -191,10 +191,10 @@ function submitotp() {
   var enteredOTP = Object.values(otp).join("");
 
   if (enteredOTP === storedOTP) {
-    alert("OTP verification successful!");
-    location.href = "index.html";
+    alert("OTP verification for payment is successful!");
+    location.href = "thankyou.html";
   } else {
-    alert("Invalid OTP. Please try again.");
+    alert("Invalid OTP.for correct OTP plz click on resend option");
     clearOTPFields()
   }
 }
