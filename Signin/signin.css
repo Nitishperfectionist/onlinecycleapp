@@ -194,6 +194,9 @@ font-size: 12px;
     text-align: center;
     font-weight: 600;
   }
+  .popup {
+    width: 70%;
+  }
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
@@ -225,6 +228,8 @@ font-size: 16px;
 }
 .checkbox-label {
   font-size: 15px;
-  
 }
+.popup {
+    width: 70%;
+  }
 }
