@@ -38,51 +38,79 @@ pagination.append(btn1)
 
 
 
-async function featchData(){
-    try{
-        let res = await fetch(`${url}?_page=${pageNumber}&_limit=12`)
-        let data = await res.json()
-        console.log(data)
-        filterData = data 
-        materailFilter = data
-        displayData(data)
+function showOverlayWithLoadingGif() {
+    let overlay = document.createElement("div");
+    overlay.className = "overlay";
+  
+    let loadingGif = document.createElement("img");
+    loadingGif.setAttribute("src", "./Image/Loading gif.gif");
+    loadingGif.setAttribute("alt", "Loading...");
+  
+    overlay.appendChild(loadingGif);
+    document.body.appendChild(overlay);
+    setTimeout(() => {
+      removeOverlay();
+    }, 500); // 2-second timer
+  }
+  
+  async function featchData() {
+    try {
+      let res = await fetch(`${url}?_page=${pageNumber}&_limit=9`);
+      let data = await res.json();
+      console.log(data);
+      filterData = data;
+      materailFilter = data;
+      displayData(data);
+     
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-        console.log(err)
+  }
+  
+  function removeOverlay() {
+    let overlay = document.querySelector(".overlay");
+    if (overlay) {
+      overlay.parentNode.removeChild(overlay);
     }
-}
-featchData()
-
-function displayData(data){
+  }
+  
+  featchData();
+  
+  
+  function displayData(data) {
     mainContainer.innerHTML = "";
-    data.map((ele) =>{
-
-        let item = document.createElement("div");
-        item.setAttribute("class","item")
-
-        let image = document.createElement("img");
-        image.src = ele.image
-
-        let title = document.createElement("h3");
-        title.textContent = ele.title
-
-        let price = document.createElement("p");
-        price.textContent = "₹ " + ele.price
-
-        let btn = document.createElement("button")
-        btn.setAttribute("class", "addItem")
-        btn.innerHTML ="🤍"
-        // btn.style.color="red"
-        btn.addEventListener('click',function(){
-            addToWishList(ele)
-        })
-
-        
-
-        item.append(image,title,price,btn)
-        mainContainer.append(item)
-    })
-}
+    data.map((ele) => {
+      let container = document.createElement("div");
+      container.setAttribute("class", "item");
+  
+      let imgDiv = document.createElement("div");
+      imgDiv.setAttribute("class", "imgDiv");
+  
+      let image = document.createElement("img");
+      image.src = ele.image;
+  
+      let titlePriceDiv = document.createElement("div");
+      titlePriceDiv.setAttribute("class", "titlePrice");
+  
+      let title = document.createElement("h3");
+      title.textContent = ele.title;
+  
+      let price = document.createElement("p");
+      price.textContent = "₹ " + ele.price;
+  
+      let button = document.createElement("button");
+      button.setAttribute("class", "addItem");
+      button.innerHTML = "🤍";
+      button.addEventListener("click", function () {
+        addToWishList(ele);
+      });
+  
+      imgDiv.appendChild(image);
+      titlePriceDiv.append(title, price, button);
+      container.append(imgDiv, titlePriceDiv);
+      mainContainer.appendChild(container);
+    });
+  }
 
 
 
