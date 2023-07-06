@@ -1,5 +1,5 @@
 body{
-    background-color: #1c1c1c;
+    background-color: #4c4848;
 
 }
 
@@ -55,7 +55,7 @@ border-radius: 10px;
 }
 
 #charecterstics{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     height: 24%;
     /* width: 69%; */
      padding-left: 25px;
@@ -237,7 +237,10 @@ height: 50px;
 
 
 /* ***************right*************************************** */
-
+#productDetails{
+    margin-top: 20px;
+    padding: 10px;
+}
 #social{
         display: flex;
         justify-content: space-between;
@@ -270,12 +273,107 @@ width: 97%;
 #redColor{
     border: 2px solid white;
     border-radius: 10px;
+    
 
 }
+
+
+#size{
+    gap: 5px;
+}
+
+#xs_size{
+    width: 60px;
+    height: 30px;
+    /* margin: 10px; */
+    border-radius: 5px;
+}
+
+#s_size{
+    width: 60px;
+    height: 30px;
+    /* margin: 10px; */
+    border-radius: 5px;
+
+
+}
+
+#m_size{
+    width: 60px;
+    height: 30px;
+    /* margin: 10px; */
+    border-radius: 5px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
 #mrp{
     text-decoration:line-through;
     
 }
 #price{
     color: white;
+}
+#bottom button{
+    height: 40px;
+    /* width: 25%; */
+    border-radius: 5px;
+}
+
+#addToCart{
+    width: 160px;
+    background-color:red;
+    border-color: none;
+    color: white;
+
+
+
+}
+
+#QuickOrder{
+    width: 160px;
+    background-color: #1c1c1c;
+    border-color: none;
+    color: white;
+
+
+}
+#wishlist{
+    width: 50px;
+}
+
+#refresh{
+    width: 50px;
+}
+
+
+#paymentTop{
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+}
+#paymentTop h3{
+        margin-top: -2px;
+
+
+}
+
+#selfDelivery_top{
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+}
+#selfDelivery_top h3{
+        margin-top: -2px;
+
+
 }

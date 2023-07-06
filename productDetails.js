@@ -19,10 +19,12 @@
 
 
 
-
+let arr=[];
 
 
 function display(data){
+
+
     data.forEach(ele => {
 
       let  mainImage=document.getElementById("mainImage")
@@ -89,17 +91,26 @@ function fun4(){
             name.textContent=ele.title
 
             let  mrp=document.getElementById("mrp")
-            mrp.textContent= +ele.price+2000
+            mrp.textContent= +ele.price
 
             let  offer=document.getElementById("offer")
-            offer.textContent= +ele.price
+            offer.textContent= +ele.price-Math.floor(ele.price*0.03)
+
+           
+
+            
 
 
 
 
 
 
+            let addToCart=document.getElementById("addToCart");
 
+            addToCart.addEventListener("click", function(){
+                    setData(ele)
+            })
+            
 
     
 
@@ -107,4 +118,10 @@ function fun4(){
     })
 }
 
-  
+
+function setData(ele){
+    window.location.assign("cart.html")
+
+    localStorage.setItem("Cart-list",JSON.stringify(ele)) 
+
+}
