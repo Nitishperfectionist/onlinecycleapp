@@ -26,8 +26,8 @@ body {
     background-color: black;
     border: 2px solid white;
     border-radius: 15px;
-    width: 200px;
-    height: 30px;
+    width: 240px;
+    height: 33px;
     padding: 10px;
     margin-bottom: 12px;
     margin-left: 100px;
@@ -57,7 +57,20 @@ body {
 
 #contact {
     margin-bottom: 12px;
-    margin-left: 100px;
+    margin-left: 80px;
     font-size: 15px;
     font-weight: bold;
+}
+
+#bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 100px;
+    gap: 20px;
+    font-family: 'Raleway';
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 300;
 }
