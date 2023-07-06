@@ -11,7 +11,7 @@ let url = 'https://slate-gray-fox-belt.cyclic.app/data'
 // pagination********************
 
 let pageNumber 
-let len = url.length/6
+let len = url.length/12
 let resutl = Math.round(len)
 let n = resutl;
 // console.log(n)
@@ -40,7 +40,7 @@ pagination.append(btn1)
 
 async function featchData(){
     try{
-        let res = await fetch(`${url}?_page=${pageNumber}&_limit=6`)
+        let res = await fetch(`${url}?_page=${pageNumber}&_limit=12`)
         let data = await res.json()
         console.log(data)
         filterData = data 
@@ -192,28 +192,33 @@ year.addEventListener("change", ()=>{
 // sorting price
 
 
-let select = document.getElementById("select");
-select.addEventListener("change",()=>{
-    let filtered = filterData.filter((ele) =>{
-        if (ele.price < 20000){
-            return ele
-        }
+let low = document.getElementById("low")
+low.addEventListener("click", lowFuntion)
 
+async function lowFuntion(){
+    try{
+        let res = await fetch(`${url}?_sort=price&_order=asc`)
+        let data = await res.json()
+        console.log(data)
+        displayData(data)
+    }
+    catch(err){
+        console.log(err)
+    }
+}
 
-    })
-    displayData(filtered)
-    
-})
-// let select1 = document.getElementById("select");
-// select1.addEventListener("change",()=>{
-//     let filtered = filterData.filter((ele) =>{
-//         if (ele.price > 20000){
-//             return ele
-//         }
+let high = document.getElementById("high")
+high.addEventListener("click", highFuntion)
 
-
-//     })
-//     displayData(filtered)
-    
-// })
+async function highFuntion(){
+    try{
+        let res = await fetch(`${url}?_sort=price&_order=desc`)
+        let data = await res.json()
+        console.log(data)
+        displayData(data)
+    }
+    catch(err){
+        console.log(err)
+    }
+}
   
