@@ -12,7 +12,7 @@ function carddata(event) {
   const cvv = cvvInput.value;
 
 
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;//for gmail validation
   const cardNumPattern = /^\d{16}$/; // Pattern for 16-digit card number
   const cvvPattern = /^\d{3}$/; // Pattern for 3-digit CVV
 
@@ -41,7 +41,7 @@ function carddata(event) {
 }
 
 const price = localStorage.getItem('cart_Value') || 0;
-document.getElementById('price').textContent = `€ ${price}`;
+document.getElementById('price').textContent = `₹ ${price}`;
 
 function formatCardNumber(e) {
   const input = e.target;

@@ -550,3 +550,42 @@ height: 15%;
   }
 
 
+/* Responsive CSS */
+
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Mobile-specific styles */
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .column {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablets and larger screens */
+@media only screen and (min-width: 481px) {
+  body {
+    font-size: 16px;
+  }
+
+  /* Tablet/larger screen-specific styles */
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .column {
+    width: 50%;
+    float: left;
+    margin-bottom: 20px;
+  }
+}
