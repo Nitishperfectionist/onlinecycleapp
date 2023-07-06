@@ -358,4 +358,22 @@ body{
     #verify{
       margin-top: 140px;
     }
+    #spinner {
+      border: 16px solid #0a1d04;
+      border-top: 16px solid #db3466;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+      margin: 100px auto;
+      display: none; /* Hide the spinner initially */
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .blurred {
+      filter: blur(5px); /* Apply the desired blur effect */
+    }
     

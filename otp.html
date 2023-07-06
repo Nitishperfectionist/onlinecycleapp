@@ -57,7 +57,7 @@
   <nav id="subnav">
       <div>
           <img src="./logos/icons8-location-40.png" alt="">
-          <p>Your location: <span>Kiev</span></p>
+          <p>Your location: <span>India</span></p>
       </div>
       <div>
           <a href="#">About us</a>
@@ -87,6 +87,8 @@
       <button type="submit" id="confirm">CONFIRM</button>
       <button id="resend">Resend OTP</button>
     </div>
+    <div id="spinner"></div> 
+    <div id="blurred"></div>
   </div>
    <!-- footer -->
    <footer id="footer">
@@ -165,6 +167,7 @@
     </div>
 </footer>
 </body>
+</html>
 
 
 <script src="https://kit.fontawesome.com/593dd93f4e.js" crossorigin="anonymous"></script>
@@ -193,10 +196,20 @@ function submitotp() {
   var enteredOTP = Object.values(otp).join("");
 
   if (enteredOTP === storedOTP) {
+    document.getElementById("spinner").style.display = "block";
+    setTimeout(function() {
+      // Hide the processing spinner
+      document.getElementById("spinner").style.display = "none";
+
     alert("OTP verification for payment is successful!");
+    
+
     location.href = "thankyou.html";
-  } else {
-    alert("Invalid OTP.for correct OTP plz click on resend option");
+    clearOTPFields();
+  } ,3000);
+}
+  else {
+    alert("Wrong OTP plz click on resend option");
     clearOTPFields()
   }
 }
@@ -238,4 +251,3 @@ function moveToNextInput(event) {
   }
 }
 </script>
-</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Loading</title>
+  <style>
+    /* CSS for loading spinner */
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-top: 16px solid #3498db;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+      margin: 100px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading" style="display: none;">
+    <div class="loader"></div>
+    <h2>Loading...</h2>
+  </div>
+
+  <div id="content">
+    <!-- Your OTP verification code -->
+    <h2>OTP Verification</h2>
+    <form id="otpForm">
+      <input type="text" id="otpInput" placeholder="Enter OTP">
+      <button type="submit">Verify</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript code
+    document.getElementById("otpForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var otpInput = document.getElementById("otpInput").value;
+      var loadingDiv = document.getElementById("loading");
+      var contentDiv = document.getElementById("content");
+
+      // Hide the content and display the loading spinner
+      contentDiv.style.display = "none";
+      loadingDiv.style.display = "block";
+
+      // Simulate a delay (replace with your actual payment processing logic)
+      setTimeout(function() {
+        // Show the content again and hide the loading spinner
+        contentDiv.style.display = "block";
+        loadingDiv.style.display = "none";
+
+        // Redirect or display success message
+        alert("Payment processed successfully!");
+        // window.location.href = "success.html"; // Uncomment to redirect to a success page
+      }, 3000); // Delay in milliseconds, adjust as needed
+    });
+  </script>
+</body>
+</html>
