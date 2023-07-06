@@ -2,8 +2,8 @@ let wishList = JSON.parse(localStorage.getItem('wishlist')) || [];
 
 let mainContainer = document.getElementById("products")
 
-let filterData =null;
-let materailFilter =null;
+let filterData =[];
+let materailFilter = [];
 
 let url = 'https://slate-gray-fox-belt.cyclic.app/data'
 
@@ -11,8 +11,10 @@ let url = 'https://slate-gray-fox-belt.cyclic.app/data'
 // pagination********************
 
 let pageNumber 
-let len = url.length/12
+let len = (url.length+11)/9
+console.log(len)
 let resutl = Math.round(len)
+
 let n = resutl;
 // console.log(n)
 
@@ -38,21 +40,6 @@ pagination.append(btn1)
 
 
 
-function showOverlayWithLoadingGif() {
-    let overlay = document.createElement("div");
-    overlay.className = "overlay";
-  
-    let loadingGif = document.createElement("img");
-    loadingGif.setAttribute("src", "./Image/Loading gif.gif");
-    loadingGif.setAttribute("alt", "Loading...");
-  
-    overlay.appendChild(loadingGif);
-    document.body.appendChild(overlay);
-    setTimeout(() => {
-      removeOverlay();
-    }, 500); // 2-second timer
-  }
-  
   async function featchData() {
     try {
       let res = await fetch(`${url}?_page=${pageNumber}&_limit=9`);
@@ -223,30 +210,21 @@ year.addEventListener("change", ()=>{
 let low = document.getElementById("low")
 low.addEventListener("click", lowFuntion)
 
-async function lowFuntion(){
-    try{
-        let res = await fetch(`${url}?_sort=price&_order=asc`)
-        let data = await res.json()
-        console.log(data)
-        displayData(data)
-    }
-    catch(err){
-        console.log(err)
-    }
+function lowFuntion(){
+    let data1 = materailFilter.sort((a,b) => +a.price - + b.price)
+    console.log(data1)
+    displayData(data1)
+
+
 }
 
 let high = document.getElementById("high")
 high.addEventListener("click", highFuntion)
 
-async function highFuntion(){
-    try{
-        let res = await fetch(`${url}?_sort=price&_order=desc`)
-        let data = await res.json()
-        console.log(data)
-        displayData(data)
-    }
-    catch(err){
-        console.log(err)
-    }
+function highFuntion(){
+    let data1 = materailFilter.sort((a,b) => +b.price - + a.price)
+    console.log(data1)
+    displayData(data1)
+
 }
   
