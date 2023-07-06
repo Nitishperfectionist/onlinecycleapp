@@ -1,0 +1,40 @@
+#footer {
+    color: white;
+    padding: 50px;
+    font-family: 'Raleway';
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+}
+
+#logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+#socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#second-logo {
+    height: 50px;
+}
+
+#socials > i {
+    height: 20px;
+}
+
+#end {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
