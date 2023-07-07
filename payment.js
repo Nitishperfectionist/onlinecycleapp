@@ -1,52 +1,92 @@
-document.querySelector('form').addEventListener("submit", carddata);
+document.querySelector("#paymentForm").addEventListener("submit", carddata);
 
 function carddata(event) {
   event.preventDefault();
-  const emailInput = document.getElementById('email');
-  const cardNumInput = document.getElementById('cardNum');
-  const cvvInput = document.getElementById('cvv');
 
-  
+  const emailInput = document.getElementById("email");
+  const cardNumInput = document.getElementById("cardNum");
+  const cvvInput = document.getElementById("cvv");
+  const errorContainer = document.getElementById("errorContainer");
+  errorContainer.innerHTML = "";
+
   const email = emailInput.value;
-  const cardNum = cardNumInput.value.replace(/\s/g, ''); // Remove whitespace from card number
+  const cardNum = cardNumInput.value.replace(/\s/g, ""); // Remove whitespace from card number
   const cvv = cvvInput.value;
 
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  const cardNumPattern = /^\d{16}$/;
+  const cvvPattern = /^\d{3}$/;
 
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;//for gmail validation
-  const cardNumPattern = /^\d{16}$/; // Pattern for 16-digit card number
-  const cvvPattern = /^\d{3}$/; // Pattern for 3-digit CVV
-
-
-   if (!emailPattern.test(email)) {
-    alert("Please enter a valid Gmail address like example@gmail.com");
+  if (!emailPattern.test(email)) {
+    showError(
+      "Please enter a valid Gmail address like example@gmail.com",
+      emailInput
+    );
     return;
   }
 
-  
   if (!cardNumPattern.test(cardNum)) {
-    alert("Please enter a valid 16-digit card number.");
+    showError("Please enter a valid 16-digit card number.", cardNumInput);
     return;
   }
 
   if (!cvvPattern.test(cvv)) {
-    alert("Please enter a valid 3-digit CVV.");
+    showError("Please enter a valid 3-digit CVV.", cvvInput);
     return;
   }
- 
+  showLoadingOverlay();
 
-  var btn = document.getElementById("btn");
-  btn.addEventListener("click", () => {
-    location.href = "otp.html";
-  });
+  setTimeout(() => {
+    hideLoadingOverlay();
+    showOtpOverlay();
+    setTimeout(() => {
+      hideMessageOverlay();
+    }, 2000);
+  }, 2000);
 }
 
-const price = localStorage.getItem('cart_Value') || 0;
-document.getElementById('price').textContent = `₹ ${price}`;
+function showLoadingOverlay() {
+  const messageOverlay = document.getElementById("messageOverlay");
+  messageOverlay.style.display = "flex";
+}
+
+function hideLoadingOverlay() {
+  const messageOverlay = document.getElementById("messageOverlay");
+  messageOverlay.style.display = "none";
+}
+
+function showOtpOverlay() {
+  const otpOverlay = document.getElementById("otpOverlay");
+  otpOverlay.style.display = "flex";
+}
+
+function hideOtpOverlay() {
+  const otpOverlay = document.getElementById("otpOverlay");
+  otpOverlay.style.display = "none";
+}
+
+function hideMessageOverlay() {
+  const messageOverlay = document.getElementById("messageOverlay");
+  messageOverlay.style.display = "none";
+}
+
+
+function showError(errorMessage, inputElement) {
+  const errorContainer = document.getElementById("errorContainer");
+  const errorElement = document.createElement("p");
+  errorElement.className = "error-message";
+  errorElement.textContent = errorMessage;
+  errorContainer.appendChild(errorElement);
+  inputElement.classList.add("error");
+}
+
+const price = localStorage.getItem("cart_Value") || 0;
+document.getElementById("price").textContent = `₹ ${price}`;
 
 function formatCardNumber(e) {
   const input = e.target;
-  const trimmedInput = input.value.replace(/\s+/g, ''); // Remove existing whitespaces
-  const formattedInput = trimmedInput.replace(/(.{4})/g, '$1 '); // Add space after every 4 characters
+  const trimmedInput = input.value.replace(/\s+/g, ""); // Remove existing whitespaces
+  const formattedInput = trimmedInput.replace(/(.{4})/g, "$1 "); // Add space after every 4 characters
   input.value = formattedInput;
 
   if (formattedInput.length > 19) {
@@ -60,13 +100,101 @@ function formatCVV(e) {
   input.value = formattedInput;
 }
 
-const cardNumInput = document.getElementById('cardNum');
-cardNumInput.addEventListener('input', formatCardNumber);
+const cardNumInput = document.getElementById("cardNum");
+cardNumInput.addEventListener("input", formatCardNumber);
 
-const cvvInput = document.getElementById('cvv');
-cvvInput.addEventListener('input', formatCVV);
+const cvvInput = document.getElementById("cvv");
+cvvInput.addEventListener("input", formatCVV);
 
 function home() {
   location.href = "index.html";
 }
 
+
+const verifyButton = document.getElementById("verifyButton");
+verifyButton.addEventListener("click", validateOTP);
+
+function validateOTP() {
+ const otpInput = document.getElementById("otpInput");
+ const otp = otpInput.value;
+ const errorContainer = document.getElementById("otpError");
+
+ // Clear previous error message
+ errorContainer.textContent = "";
+
+ // Perform the OTP validation logic here
+ // Replace the if condition with your actual OTP validation logic
+ if (otp === "123456") {
+   // OTP is valid
+   // Display success message or perform necessary actions
+   console.log("OTP is valid");
+
+   hideOtpOverlay(); // Hide the OTP overlay
+
+   showOverlayMessage("OTP Verified Successfully"); // Show the OTP verification overlay
+
+   setTimeout(() => {
+     hideOverlayMessage(); // Hide the OTP verification overlay
+     showThankYouScreen("ABC123"); // Pass the actual order ID
+   }, 2000);
+ } else {
+   // OTP is invalid
+   // Display error message or perform necessary actions
+   const errorMessage = "Invalid OTP";
+   console.log(errorMessage);
+   errorContainer.textContent = errorMessage;
+ }
+}
+
+function showOverlayMessage(message) {
+ const otpVerifiedOverlay = document.getElementById("otpVerifiedOverlay");
+ const otpVerifiedOverlayMessage = document.getElementById(
+   "otpVerifiedOverlay-message"
+ );
+
+ otpVerifiedOverlayMessage.textContent = message;
+ otpVerifiedOverlay.style.display = "flex";
+}
+
+function hideOverlayMessage() {
+ const otpVerifiedOverlay = document.getElementById("otpVerifiedOverlay");
+ otpVerifiedOverlay.style.display = "none";
+}
+
+function showThankYouScreen(orderId) {
+ const thankYouScreen = document.getElementById("thankYouScreen");
+ thankYouScreen.style.display = "flex";
+
+ const orderIdElement = document.getElementById("orderId");
+ orderIdElement.textContent = orderId;
+
+ const homeButton = document.getElementById("homeButton");
+ homeButton.style.display = "block";
+
+ const redirectText = document.getElementById("redirectText");
+ const countdownElement = document.getElementById("countdown");
+
+ let countdown = 5; // Starting countdown value
+
+ // Update the countdown every second
+ const countdownInterval = setInterval(() => {
+   countdown--;
+   countdownElement.textContent = countdown;
+
+   if (countdown <= 0) {
+     // Redirect to home page when countdown reaches 0
+     clearInterval(countdownInterval);
+     location.href = "index.html";
+   }
+ }, 1000);
+ 
+ // Auto-redirect to home page after 5 seconds
+ setTimeout(() => {
+   location.href = "index.html";
+ }, 5000);
+}
+
+function hideThankYouScreen() {
+ const thankYouScreen = document.getElementById("thankYouScreen");
+ thankYouScreen.style.display = "none";
+}
