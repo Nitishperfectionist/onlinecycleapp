@@ -20,45 +20,71 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/payment.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="navBar/nav.css">
 
 </head>
 <body>
-    <div id="navbar" >
-        <!-- navbar -->
-
-    <nav id="nav">
+  <div class="navbar">
+    <div class="logo-menu">
+      <nav>
+        <img src="./Images/Logo.png" class="logo" alt="logo">
+        <ul>
+          <li><a href="#">Catalog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </nav>
       
-            <div id="home" onclick="home()">
-                <img src="./logos/home-logo.png" alt="home">
+    </div>
+  
+    <div class="search-bar">
+      <div id="nav_search_userpro">
+        <input type="search" placeholder="Search" id="search">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  
+    <div class="user-profile">
+        <div id="loginOption" class="login-option">Login</div>
+        <img src="../Images/user.png" class="user-pic auth-user-pic" id="userPic">
+        <div class="sub-menu-wrap" id="subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src="../Images/user.png">
+              <h3>Vikas</h3>
             </div>
-            <div id="nav-mid">
-               <div>
-                <a href="category/category.html">MOUTAIN</a>
-                <a href="category/category.html">ROAD</a>
-                <a href="category/category.html">ACTIVA</a>
-                <a href="category/category.html">ELECTRIC</a>
-                <a href="category/category.html">KIDS</a>
-               </div>
-               <div id="nav_search_box">
-                <input type="search" placeholder="Search" id="search">
-                <button><i class="fa-solid fa-magnifying-glass fa-bounce fa-sm" style="color: #ffffff;"></i></button>
-               </div>
-               <div id="sugge_box">
-               </div>
-               <div>
-                <p>+38 044 679 38 67</p>
-               </div>
-            </div>
-            <div id="nav-end">
-                <a href="wishlist.html"><i class="fa-regular fa-heart fa-xl"></i></a>
-                <a href="#"><img src="./logos/compare.svg" alt=""></a>
-                <a href="./order_page/cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
-                <a href="login.html" class="profile"><i class="fa-regular fa-user fa-lg"></i></a>
-            </div>
-    </nav>
-    
-</div>
+          <hr>
+  
+          <a href="#" class="sub-menu-link">
+            <img src="../Images/profile.png">
+            <p> Edit Profile </p>
+            <span> > </span>
+          </a>
+          <a href="#" class="sub-menu-link catalogue-link ">
+            <img src="../Images/profile.png">
+            <p> Catalogue </p>
+            <span> > </span>
+          </a>
+          <a href="#" class="sub-menu-link">
+            <img src="../Images/setting.png">
+            <p> Settings </p>
+            <span> > </span>
+          </a>
+          <a href="#" class="sub-menu-link">
+            <img src="../Images/help.png">
+            <p> Wishlist </p>
+            <span> > </span>
+          </a>
+          <a href="#" class="sub-menu-link" id="logoutButton">
+            <img src="../Images/logout.png">
+            <p> Logout </p>
+            <span> > </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 <!-- subnavbar -->
 
 <!--main section-->
@@ -268,7 +294,19 @@
         </div>
     </footer>
     </body> 
+    </html>
     <script src="https://kit.fontawesome.com/593dd93f4e.js" crossorigin="anonymous"></script>
     <script src="payment.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" src="./navBar/nav.js"></script>
 
-</html>
+ 
+
+

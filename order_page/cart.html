@@ -5,60 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cart.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://www.specialized.com/_ui/addons/specializedstorefrontaddon/desktop/common/images/favicon.ico?v=1.1"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/f5664c1180.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&family=Roboto+Condensed:wght@400;700&family=Wix+Madefor+Text:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+  <!-- <link rel="stylesheet" href="css/footer.css"> -->
+    <link rel="stylesheet" href="../navBar/nav.css">
+
     <title>Specialized</title>
    
     <script src="https://kit.fontawesome.com/ad020c6830.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="navbar" >
-        <!-- navbar -->
-    <nav id="nav">
+    <div class="navbar">
+        <div class="logo-menu">
+          <nav>
+            <img src="../Images/Logo.png" class="logo" alt="logo">
+            <ul>
+              <li><a href="#">Catalog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </nav>
+          
+        </div>
       
-            <div id="home" onclick="home()">
-                <img src="../logos/home-logo.png" alt="home">
+        <div class="search-bar">
+          <div id="nav_search_userpro">
+            <input type="search" placeholder="Search" id="search">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      
+        <div class="user-profile">
+            <div id="loginOption" class="login-option">Login</div>
+            <img src="../Images/user.png" class="user-pic auth-user-pic" id="userPic">
+            <div class="sub-menu-wrap" id="subMenu">
+              <div class="sub-menu">
+                <div class="user-info">
+                  <img src="../Images/user.png">
+                  <h3>Vikas</h3>
+                </div>
+              <hr>
+      
+              <a href="#" class="sub-menu-link">
+                <img src="../Images/profile.png">
+                <p> Edit Profile </p>
+                <span> > </span>
+              </a>
+              <a href="#" class="sub-menu-link catalogue-link ">
+                <img src="../Images/profile.png">
+                <p> Catalogue </p>
+                <span> > </span>
+              </a>
+              <a href="#" class="sub-menu-link">
+                <img src="../Images/setting.png">
+                <p> Settings </p>
+                <span> > </span>
+              </a>
+              <a href="#" class="sub-menu-link">
+                <img src="../Images/help.png">
+                <p> Wishlist </p>
+                <span> > </span>
+              </a>
+              <a href="#" class="sub-menu-link" id="logoutButton">
+                <img src="../Images/logout.png">
+                <p> Logout </p>
+                <span> > </span>
+              </a>
             </div>
-            <div id="nav-mid">
-               <div>
-                <a href="category/category.html">MOUTAIN</a>
-                <a href="category/category.html">ROAD</a>
-                <a href="category/category.html">ACTIVA</a>
-                <a href="category/category.html">ELECTRIC</a>
-                <a href="category/category.html">KIDS</a>
-               </div>
-               <div id="nav_search_box">
-                <input type="search" placeholder="Search" id="search">
-                <button><i class="fa-solid fa-magnifying-glass fa-bounce fa-sm" style="color: #ffffff;"></i></button>
-               </div>
-               <div id="sugge_box">
-               </div>
-               <div>
-                <p>+38 044 679 38 67</p>
-               </div>
-            </div>
-            <div id="nav-end">
-                <a href="wishlist.html"><i class="fa-regular fa-heart fa-xl"></i></a>
-                <a href="#"><img src="../logos/compare.svg" alt=""></a>
-                <a href="cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
-                <a href="login.html" class="profile"><i class="fa-regular fa-user fa-lg"></i></a>
-                
-            </div>
-    </nav>
-    
-</div>
-<!-- subnavbar -->
-<nav id="subnav">
-    <div>
-        <img src="../logos/icons8-location-40.png" alt="">
-        <p>Your location: <span>India</span></p>
-    </div>
-    <div>
-        <a href="#">About us</a>
-        <a href="#">Delivery</a>
-        <a href="#">Payment</a>
-        <a href="#">Contact</a>
-    </div>
-</nav>
-
+          </div>
+        </div>
+      </div>
     <main>
         <div id="orderitem">
         <p><i class="fa-solid fa-house"></i> --- Your Order</p>
@@ -185,6 +214,16 @@
     </footer>
 </body>
 </html>
+<script
+type="module"
+src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+nomodule
+src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+></script>
+<script type="module" src="../navBar/nav.js"></script>
+
 
 <script src="https://kit.fontawesome.com/593dd93f4e.js" crossorigin="anonymous"></script>
 <script src="cart.js">
