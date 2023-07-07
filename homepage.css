@@ -12,7 +12,7 @@ body {
 
 #top {
     display: flex;
-    margin: 0 100px;
+    margin: 0;
     gap: 80px;
     padding-top: 30px;
     border-bottom: solid 2px white;
@@ -157,6 +157,7 @@ body {
     gap: 20px;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #product-image {
@@ -199,6 +200,7 @@ body {
 #brain-tech-title {
     font-size: 35px;
     margin-bottom: 40px;
+    color: white;
 }
 
 #bt {
@@ -228,7 +230,7 @@ body {
     height: 50px;
     background-color: transparent;
     border: 2px solid #C68409;
-    color: black;
+    color: white;
     box-shadow: #C68409 0px 1px 10px 0px;
     border-radius: 7px;
 }
@@ -320,4 +322,92 @@ body {
     border-radius: 20px;
     padding: 100px;
     box-shadow: #C68409 0px 1px 10px 0px;
+}
+
+@media only screen and (max-width: 1900px){
+    #contact {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1600px){
+    #contact {
+        display: none;
+    }
+
+    #category {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1430px){
+    #contact {
+        display: none;
+    }
+
+    #category {
+        display: none;
+    }
+
+    #hide {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1150px){
+    #contact {
+        display: none;
+    }
+
+    #category {
+        display: none;
+    }
+
+    #hide {
+        display: none;
+    }
+
+    #body-start {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    #contact {
+        display: none;
+    }
+
+    #category {
+        display: none;
+    }
+
+    #search {
+        display: none;
+    }
+
+    #top {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 930px){
+    #contact {
+        display: none;
+    }
+
+    #category {
+        display: none;
+    }
+
+    #search {
+        display: none;
+    }
+
+    #top {
+        margin: 0;
+    }
+
+    #body-start {
+        display: none;
+    }
 }
