@@ -49,6 +49,7 @@ function carddata(event) {
 
   setTimeout(() => {
     hideLoadingOverlay();
+    generateOTP(); // Generate a new OTP
     showOtpOverlay();
     setTimeout(() => {
       hideMessageOverlay();
@@ -68,6 +69,11 @@ function hideLoadingOverlay() {
 
 function showOtpOverlay() {
   const otpOverlay = document.getElementById("otpOverlay");
+  const generatedOTP = localStorage.getItem("generatedOTP");
+ // const otpDisplay = document.getElementById("otpDisplay");
+ alert("Your OTP is: " + generatedOTP); // Display an alert with the generated OTP
+ // otpDisplay.textContent = generatedOTP; // Display the generated OTP on the screen
+
   otpOverlay.style.display = "flex";
 }
 
@@ -135,7 +141,8 @@ function validateOTP() {
 
  // Perform the OTP validation logic here
  // Replace the if condition with your actual OTP validation logic
- if (otp === "123456") {
+ if (otp === localStorage.getItem("generatedOTP")) {
+ //if (otp === "123456") {
    // OTP is valid
    // Display success message or perform necessary actions
    console.log("OTP is valid");
@@ -155,6 +162,11 @@ function validateOTP() {
    console.log(errorMessage);
    errorContainer.textContent = errorMessage;
  }
+}
+
+function generateOTP() {
+  const generatedOTP = Math.floor(10000 + Math.random() * 90000); // Generate a random 5-digit OTP
+  localStorage.setItem("generatedOTP", generatedOTP); // Store the OTP in local storage
 }
 
 function showOverlayMessage(message) {
