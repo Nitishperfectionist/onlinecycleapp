@@ -180,6 +180,7 @@
     }
     
     .pagination-button {
+      margin-top: 20px;
       padding: 15px;
       background-color: #484448;
       border-radius: 5px;
