@@ -4,13 +4,17 @@ function carddata(event) {
   event.preventDefault();
 
   const emailInput = document.getElementById("email");
+  const pincodeInput = document.getElementById("zip");
   const cardNumInput = document.getElementById("cardNum");
+  const monthInput = document.getElementById("expMon"); 
   const cvvInput = document.getElementById("cvv");
   const errorContainer = document.getElementById("errorContainer");
   errorContainer.innerHTML = "";
 
   const email = emailInput.value;
+  const pincode=pincodeInput.value;
   const cardNum = cardNumInput.value.replace(/\s/g, ""); // Remove whitespace from card number
+  const month=parseInt(monthInput.value);
   const cvv = cvvInput.value;
 
   const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
@@ -24,12 +28,19 @@ function carddata(event) {
     );
     return;
   }
+  if (pincode.length !== 6) {
+    showError("Please enter a valid 6-digit pincode.", pincodeInput);
+    return;
+  }
 
   if (!cardNumPattern.test(cardNum)) {
     showError("Please enter a valid 16-digit card number.", cardNumInput);
     return;
   }
-
+  if (month < 1 || month > 12) {
+    showError("Please enter a valid month between 1 to 12.", monthInput);
+    return;
+  }
   if (!cvvPattern.test(cvv)) {
     showError("Please enter a valid 3-digit CVV.", cvvInput);
     return;
