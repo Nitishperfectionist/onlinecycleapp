@@ -69,10 +69,11 @@ button:hover {
 
 .password-strength {
   display: flex;
-  align-items: center;
+  align-items:center;
   margin-top: -2%;
   margin-bottom: 4%;
   width: 80%;
+  
 }
 
 .meter {
@@ -83,7 +84,7 @@ button:hover {
 }
 
 .text {
-  width: 42%;
+  width: 43%;
   margin-left: 10px;
   font-weight: bold;
   position: absolute;
@@ -210,6 +211,9 @@ p {
   .popup {
     width: 70%;
   }
+.text {
+ width: 30%;
+}
 }
 @media (min-width:700px) and (max-width:1200px) {
   form {
@@ -219,5 +223,16 @@ p {
   .popup {
     width: 70%;
   }
+  .text {
+ width: 25%;
+  
+}
+.password-toggle span {
+ 
+ right: 1%;
+  top: 40%;
+  cursor: pointer;
+  color: #999;
+}
 
 }
