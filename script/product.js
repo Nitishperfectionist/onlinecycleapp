@@ -75,6 +75,12 @@ pagination.append(btn1)
   
       let image = document.createElement("img");
       image.src = ele.image;
+      image.setAttribute("id", "imageID")
+    //  let imageID = document.getElementById("imageId")
+     image.addEventListener("click" ,()=>{
+        window.location.assign("productDetails.html")
+        
+     })
   
       let titlePriceDiv = document.createElement("div");
       titlePriceDiv.setAttribute("class", "titlePrice");
