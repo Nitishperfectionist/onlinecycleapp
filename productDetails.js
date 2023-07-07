@@ -125,3 +125,8 @@ function setData(ele){
     localStorage.setItem("Cart-list",JSON.stringify(ele)) 
 
 }
+
+
+
+// *********************slider***************************************
+

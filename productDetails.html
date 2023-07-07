@@ -6,25 +6,91 @@
     <title>Product Details</title>
     
 </head>
+<link rel="stylesheet" href="./navBar/nav.css" />
+<link rel="stylesheet" href="./footer/footer.css">
 <link rel="stylesheet" href="productDetails.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.css'><link rel="stylesheet" href="./dist/style.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&family=Roboto+Condensed:wght@400;700&family=Wix+Madefor+Text:wght@600&display=swap" rel="stylesheet">
+
+
+<link rel="icon" type="image/x-icon" href="https://www.specialized.com/_ui/addons/specializedstorefrontaddon/desktop/common/images/favicon.ico?v=1.1"/>
+
 <script src="https://kit.fontawesome.com/b90a60688f.js" crossorigin="anonymous"></script>
-<script src="./productDetails.js">
-    
+<script src="./productDetails.js">    
 </script>
 
-<style>
-   
-
-</style>
 <body>
     <div id="body">
-    <div id="navbar">
+        <div class="navbar">
+            <div class="logo-menu">
+              <nav>
+                <img src="./Images/Logo.png" class="logo" alt="logo">
+                <ul>
+                  <li><a href="#">Catalog</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Support</a></li>
+                </ul>
+              </nav>
+              
+            </div>
+          
+            <div class="search-bar">
+              <div id="nav_search_userpro">
+                <input type="search" placeholder="Search" id="search">
+                <button><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+          
+            <div class="user-profile">
+                <div id="loginOption" class="login-option">Login</div>
+                <img src="./Images/user.png" class="user-pic auth-user-pic" id="userPic">
+                <div class="sub-menu-wrap" id="subMenu">
+                  <div class="sub-menu">
+                    <div class="user-info">
+                      <img src="./Images/user.png">
+                      <h3>Vikas</h3>
+                    </div>
+                  <hr>
+          
+                  <a href="#" class="sub-menu-link">
+                    <img src="./Images/profile.png">
+                    <p> Edit Profile </p>
+                    <span> > </span>
+                  </a>
+                  <a href="#" class="sub-menu-link catalogue-link ">
+                    <img src="./Images/profile.png">
+                    <p> Catalogue </p>
+                    <span> > </span>
+                  </a>
+                  <a href="#" class="sub-menu-link">
+                    <img src="./Images/setting.png">
+                    <p> Settings </p>
+                    <span> > </span>
+                  </a>
+                  <a href="#" class="sub-menu-link">
+                    <img src="./Images/help.png">
+                    <p> Wishlist </p>
+                    <span> > </span>
+                  </a>
+                  <a href="#" class="sub-menu-link" id="logoutButton">
+                    <img src="./Images/logout.png">
+                    <p> Logout </p>
+                    <span> > </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    </div>
 
 
-
-    <div id="parent">
+            <div id="parent">
 
 <!-- ***************************left side*********************************************** -->
 
@@ -92,7 +158,7 @@
                 </div>
 
                 <div id="show_more" class="changeColor">
-                  <i class="fa-sharp fa-regular fa-circle-down"></i>   SHOW MORE
+                  <i class="fa-sharp fa-regular fa-circle-down" ></i>   SHOW MORE
                 </div>
 
 
@@ -107,7 +173,10 @@
                    <P id="P2">The Turbo Kenevo Super Light puts the "E" in our Enduro . Delivering more of want you want from your trail ride-more capability everyware .More power to climb . more pop when you really need it . more adrenaline. More laps, more jumps, more drops , faster rides with fresher legs .</P>
                    <P id="P3">And it does all this with less . Carrying much less weight than bulkier e-MTBs , the Turbo Kenevo Super Light is hyper-responsive and just as willing and able to redefine big trail performance as our Enduro . Level up your trail game . </P>
                 <!-- </div> -->
+                <br>
+
                 <div>
+                    
                     <div id="show_more" class="changeColor">
                         <i class="fa-sharp fa-regular fa-circle-down"></i>  SHOW MORE
                     </div>
@@ -118,7 +187,7 @@
             <div id="reviews">
                     <div id="lReview">
                 <div id="rev_heading">
-                    <h3>Reviews</h3>
+                    <h3>REVIEWS</h3>
 
                 </div>
                 <div>
@@ -134,7 +203,7 @@
                     <i class="fa-solid fa-star" style="color: #dfce16;"></i><i class="fa-solid fa-star" style="color: #dfce16;"></i><i class="fa-solid fa-star" style="color: #dfce16;"></i><i class="fa-solid fa-star" style="color: #dfce16;"></i><i class="fa-solid fa-star" style="color: #dfce16;"></i>
                 </div>
                 <div id="arrow">
-                    <i class="fa-solid fa-chevron-left"></i>
+                    <i class="fa-solid fa-chevron-left" ></i>
                     <i class="fa-solid fa-chevron-right"></i>
                     </div>
                 </div>
@@ -159,7 +228,11 @@
                       <div > <h1 id="name" >xxxxxxxxxxxxxxxx</h1> </div> 
                   <div id="social"  >
                     <div id="rating">
-                   <div>  <i class="fa-solid fa-star" style="color: #dfce16;"></i><i class="fa-solid fa-star" style="color: #dfce16;"></i><i class="fa-solid fa-star" style="color: #dfce16;"></i><i class="fa-solid fa-star" style="color: #dfce16;"></i><i class="fa-solid fa-star-half-stroke" style="color: #dadd27;"></i>
+                   <div>  <i class="fa-solid fa-star" style="color: goldenrod"></i>
+                    <i class="fa-solid fa-star" style=" color: goldenrod;"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod;"></i>
+                    <i class="fa-solid fa-star" style="color: goldenrod;"></i>
+                    <i class="fa-solid fa-star-half-stroke" style="color: goldenrod;"></i>
                    </div>
                     <p id="myrat">4.7</p>
                         </div>
@@ -197,7 +270,7 @@
 
 
                         <div id="price">
-                            <h2  > ₹ <span id="mrp"></span> </h2>
+                           <div><h3  > ₹ <span id="mrp"></span></h3> <div id="discount"><button>-30 %</button></div></div> 
                             <h1 >₹ <span id="offer"></span></h1>
                         </div>
                             <hr>
@@ -241,16 +314,16 @@
                       <div> <h3>SELF DELIVERY FROM SPECIALIZED STORES</h3></div>  
                     </div>
                     <div id="selfDelivery_bottom">
-                            <div>
-                                <h2>KYIV:</h2><h3>Dneprovskaiia Naberezhna</h3>
+                               <div id="selfDelivery_box">
+                               <div> <h2>KYIV:</h2><h3>Dneprovskaiia Naberezhna,23A</h3></div>
 
 
-                                <p>Pick up tomorrow 10 am to 18:00 pm </p>
+                                <p id="greenText">Pick up tomorrow 10 am to 18:00 pm </p>
                                 </div>
-                                <div>
-                                    <h2>LVIV</h2><h3>Lubo mirski palace 10</h3>
+                                <div id="selfDelivery_box">
+                                   <div> <h2>LVIV: </h2><h3>Lubo mirski palace 10</h3></div>
 
-                                    <p>Pick up 3rd october 10:00 am to 18:00 pm</p>
+                                    <p  id="greenText">Pick up 3rd october 10:00 am to 18:00 pm</p>
 
                                 </div>
                             
@@ -262,7 +335,7 @@
                 <div id="homeDelivery">
 
                     <div id="homeDelivery_top">
-                        <i class="fa-solid fa-truck-front"></i> <h3>HOME DELIVERY </h3>
+                      <img id="logos" src="https://icones.pro/wp-content/uploads/2021/05/icone-livraison-jaune.png" alt=""> <h3>HOME DELIVERY </h3>
 
 
                     </div>
@@ -272,8 +345,8 @@
                                 <h3>
                                         Indicated time by you
                                 </h3>
-                                <img src="data:image/png;base64,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" alt="">
-                                <p>tomorrow</p>
+                        <img src="https://icones.pro/wp-content/uploads/2021/05/icone-livraison-jaune.png" alt="">     
+                                                   <p id="greenText">Tomorrow</p>
                                <h2>6$</h2>
 
                             </div>
@@ -283,7 +356,7 @@
                                 </h3>
 
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCo6qUsWAwh8Ogkop7dX5_EuodSio49-09Ra8UnzVdfYiompeKwseHgqM9_zLQU-3qduc&usqp=CAU" alt="">
-                                <p>tomorrow</p>
+                                <p id="greenText">Tomorrow</p>
                                 <h2>6$</h2>
                             </div>
 
@@ -293,25 +366,239 @@
 
 
                 <div id="selfDelivery_location">
-                    <i class="fa-regular fa-location-dot"></i>
-                  <H3>SELF DELIVERY FROM NOVE POSHTA</H3>  
+                    <i class="fa-solid fa-location-dot" style="color: #dee109;"></i>                                           <H3>  SELF DELIVERY FROM << NOVE POSHTA >></H3>  
 
                 </div>
 
                 <div id="warranty">
-                    <i class="fa-regular fa-badge-check"></i>
-                    <h3>WARRANTY</h3><p>2 years for registered products and 1 year for not registered products</p>
+                  <div> <i class="fa-brands fa-dribbble"style="color: #dee109;"></i>
+                    <h3>WARRANTY</h3>
+                </div>
+                    <p>2 years for registered products and 1 year for not registered products</p>
 
                 </div>
                 <div id="exchange">
-                    <i class="fa-solid fa-arrow-rotate-left"></i>
-                    <h3>EXCHANGE & RETURNS:</h3><P>within 14 days </P>
+                   <div><i class="fa-solid fa-retweet" style="color: #fbdf28;"></i>                  <h3>EXCHANGE & RETURNS:</h3></div> 
+                    
+                    <P>within 14 days </P>
 
                 </div>
         </div>
 
 
     </div>
+
+
+    <h1 id="whiteColor">YOU CAN LIKE THIS</h1>
+
+   <div class="slick-carousel">
+
+  <!-- Inside the containing div, add one div for each slide -->
+  <div id="img">
+    <!-- You can put an image or text inside each slide div -->
+    <img src="https://assets.specialized.com/i/specialized/30020-471_WHL_TERRA-CLX-EVO-SATIN-CARBON-GLOSS-BLK-700C_HERO?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto">
+    <div><h3>Wheel</h3>
+        <h5>₹ 300</h5></div>
 </div>
+<div  id="img">
+    <img src="https://assets.specialized.com/i/specialized/27123-710_SDDL_ROMIN-EVO-PRO-MIRROR-SADDLE-BLK-143_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto">
+  <div >
+    <h3>Seat</h3>
+    <h5>₹ 325</h5>
+  </div>
+   
+  </div>
+<div  id="img">
+    <img src="https://assets.specialized.com/i/specialized/47214-2252_PUMP_AIR-TOOL-SPORT-STEEL-FLR_BLK?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto">
+  <div>  <h3>Stand</h3>
+    <h5>₹ 968</h5></div>
+  </div>
+  <div  id="img">
+    <img src="https://assets.specialized.com/i/specialized/64822-161_APP_NEW-ERA-METAL-9FIFTY-SNAPBACK-HAT-DOVGRY-OSFA_HERO?w=1600&h=900&fmt=auto">
+    <div><h3>Cap</h3>
+        <h5>₹ 1700</h5></div>
+</div>
+<div id="img">
+    <!-- You can put an image or text inside each slide div -->
+    <img src="https://assets.specialized.com/i/specialized/30020-471_WHL_TERRA-CLX-EVO-SATIN-CARBON-GLOSS-BLK-700C_HERO?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto">
+    <div><h3>Wheel</h3>
+        <h5>₹ 300</h5></div>
+</div>
+<div  id="img">
+    <img src="https://assets.specialized.com/i/specialized/27123-710_SDDL_ROMIN-EVO-PRO-MIRROR-SADDLE-BLK-143_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto">
+  <div >
+    <h3>Seat</h3>
+    <h5>₹ 325</h5>
+  </div>
+   
+  </div>
+  <div  id="img">
+    <img src="https://assets.specialized.com/i/specialized/49119-161_LGHT_FLUX-1200-HEADLIGHT_MOUNT?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto">
+   <div> <h3>Handle</h3>
+    <h5>₹ 256</h5></div>
+</div>
+<div  id="img">
+    <img src="https://assets.specialized.com/i/specialized/47214-2252_PUMP_AIR-TOOL-SPORT-STEEL-FLR_BLK?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto">
+  <div>  <h3>Stand</h3>
+    <h5>₹ 968</h5></div>
+  </div>
+  <div  id="img">
+    <img src="https://assets.specialized.com/i/specialized/27123-710_SDDL_ROMIN-EVO-PRO-MIRROR-SADDLE-BLK-143_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto">
+  <div >
+    <h3>Seat</h3>
+    <h5>₹ 325</h5>
+  </div>
+   
+  </div>
+<div  id="img">
+    <img src="https://assets.specialized.com/i/specialized/47214-2252_PUMP_AIR-TOOL-SPORT-STEEL-FLR_BLK?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto">
+  <div>  <h3>Stand</h3>
+    <h5>₹ 968</h5></div>
+  </div>
+</div>
+
+
+
+
+<h1 id="whiteColor">SIMILAR BIKES</h1>
+<div class="slick-carousel">
+
+    <!-- Inside the containing div, add one div for each slide -->
+    <div id="img">
+      <!-- You can put an image or text inside each slide div -->
+      <img src="https://m.media-amazon.com/images/I/61BHUGgu62L._SL1100_.jpg">
+     
+     <div > <h3 >Leader Buddy Kids </h3>
+        <h5> ₹ 15999</h5></div>
+    </div>
+    <div id="img">
+      <img src="https://m.media-amazon.com/images/I/71BN+8dMbjL._SL1500_.jpg">
+      <div><h3>EMotorad Electric</h3>
+        <h5>₹ 11999</h5></div>
+    </div>
+    <div id="img">
+      <img src="https://m.media-amazon.com/images/I/71j9EIGg10L._SL1500_.jpg">
+      <div><h3>Leader E-Power L6 </h3>
+        <h5> ₹ 13999</h5></div>
+    </div>
+    <div id="img">
+      <img src="https://m.media-amazon.com/images/I/81iRt1kdeeL._SL1500_.jpg">
+     <div> <h3>Lifelong  Ride Kids</h3>
+        <h5>₹ 27999</h5></div>
+    </div>
+    <div id="img">
+        <img src="https://m.media-amazon.com/images/I/71BN+8dMbjL._SL1500_.jpg">
+        <div><h3>EMotorad Electric</h3>
+          <h5>₹ 11999</h5></div>
+      </div>
+    <div id="img">
+      <img src="https://m.media-amazon.com/images/I/81W065z6egL._SL1500_.jpg">
+      <div><h3>P.3</h3>
+        <h5>₹ 57999</h5></div>
+    </div>
+    <div id="img">
+        <img src="https://m.media-amazon.com/images/I/71j9EIGg10L._SL1500_.jpg">
+        <div><h3>Leader E-Power L6 </h3>
+          <h5> ₹ 13999</h5></div>
+      </div>
+      <div id="img">
+        <img src="https://m.media-amazon.com/images/I/81iRt1kdeeL._SL1500_.jpg">
+       <div> <h3>Lifelong  Ride Kids</h3>
+          <h5>₹ 27999</h5></div>
+      </div>
+    <div id="img">
+        <img src="https://m.media-amazon.com/images/I/71ZZvQA+1EL._SL1500_.jpg">
+        <div><h3>CR-7</h3>
+            <h5>₹ 3599</h5></div>
+    </div>
+  </div>
+
+
+
+ <!--footer-->
+
+ <footer id="footer">
+    <div class="footer_top">
+        <div class="Social_media">
+            <div class = "logo">
+                <img src="./logos/home-logo.png" alt="">
+            </div>
+            <div>
+                <a href="#"><img src="./logos/icons8-youtube.svg" alt=""></a>
+                <a href="#"><img src="./logos/icons8-facebook.svg" alt=""></a>
+                <a href="#"><img src="./logos/icons8-linkedin-32.png" alt=""></a>
+                <a href="#"><img src="./logos/icons8-instagram.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="about">
+            <div>
+                <h4>MOUTAIN</h4>
+                <a href="#">Cross Country</a>
+                <a href="#">Downhill</a>
+                <a href="#">Dirt Jump</a>
+                <a href="#">Frames</a>
+            </div>
+            <div>
+                <h4>ROAD</h4>
+                <a href="#">Performance</a>
+                <a href="#">Gravel</a>
+                <a href="#">Cyclocross</a>
+                <a href="#">Triathlon</a>
+            </div>
+            <div>
+                <h4>ACTIVA</h4>
+                <a href="#">Fitness</a>
+                <a href="#">Transport</a>
+                <a href="#">Comfort</a>
+            </div>
+            <div>
+                <h4>ELECTRIC</h4>
+                <a href="#">Road</a>
+                <a href="#">Mountain</a>
+                <a href="#">Active</a>
+            </div>
+            <div>
+                <h4>KIDS</h4>
+                <a href="#">Toddler</a>
+                <a href="#">Little kids</a>
+                <a href="#">Big kids</a>
+            </div>
+            <div>
+                <h4>CUSTOMERS</h4>
+                <a href="#">About us</a>
+                <a href="#">Delivery</a>
+                <a href="#">Payment</a>
+                <a href="#">Contacts</a>
+            </div>
+            <div>
+                <h4>SUPPORT</h4>
+                <a href="#">Support center</a>
+                <a href="#">Warranty</a>
+                <a href="#">Bike registration</a>
+                <a href="#">Shipping&Delivery</a>
+            </div>
+        </div>
+        <div class="newsletter">
+               <h4>NEWSLETTER</h4>
+               <div>
+                <input type="text" class="news_join" placeholder="Join Our Newsletter">
+                <button>JOIN</button>
+               </div>
+               <p >By submitting your email address you agree to
+                the <span><a href="#" id="terms_con"> Terms & Conditions</a></span></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+          <p>© 1997 - 2022. Specialized Bicycle Components, Inc. All Rights Reserved</p>
+    </div>
+</footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- slick Carousel CDN -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+<!-- partial -->
+  <script  src="./dist/script.js"></script>
+
 </body>
 </html>
