@@ -1,0 +1,717 @@
+#body{
+    background-color: #4c4848;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+gap: 150px;
+}
+
+
+/* **********************change colors ************************ */
+
+.changeColor{
+    color: goldenrod;
+}
+.changeColorYellow{
+    color: yellow;
+}
+
+#parent{
+
+    display: flex;
+    margin-top: -100px;
+    gap: 40px;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    
+    }
+    #left{
+        padding: 0;
+        /* border: 2px solid red; */
+        width: 50%;
+    }
+    #right{
+        margin-top: -15px;
+        
+    }
+    #left div{
+        margin-top: 20px;
+
+    }
+    #right div{
+        margin-top: 10px;
+        
+    }
+
+#mainImage {
+    width: 100%;
+    height: 420px;
+    border-radius: 10px;
+}
+
+#diffAngle{
+    width: 98%;
+display: flex;
+/* justify-content: space-between; */
+gap: 25px;
+}
+#diffAngle img{
+width: 100px;
+height: 60px;
+border-radius: 10px;
+
+}
+
+#charecterstics{
+    border: 1px solid silver;
+    height: 24%;
+    /* width: 69%; */
+     padding-left: 25px;
+     padding-right:  25px; 
+     margin-top: -20px;
+
+    background-color: white;
+    border-radius: 10px;
+
+}
+#show_more {
+    margin-top: 20px;
+    margin-bottom: -20px;
+
+     text-align: center; 
+}
+
+
+#char_details{
+    margin-top: 0px;
+}
+#char_details div {
+    display: flex;
+    justify-content: space-between;
+} 
+
+#char_details div p{
+    margin: 0px;
+}
+#char_details div h5{
+    margin: 0px;
+}
+#description{
+    border: 2px solid silver;
+    height: 28%;
+    /* width: 69%; */
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+#reviews{
+    border: 1px solid silver;
+    height: 13%;
+    /* width: 69%; */
+     padding-left: 20px; 
+     padding-bottom: 20px; 
+     padding-right: 20px; 
+
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content:space-between;
+
+}
+#arrow div{
+    height: 200px;
+
+
+}
+#lReview{
+    width: 50%;
+}
+ #arrow{
+    display: flex;
+    gap: 50%;
+justify-content: space-between;
+}
+
+/* ********************************************************************** */
+
+
+/* ***************right*************************************** */
+#name{
+    color: white;
+}
+
+
+
+#productDetails{
+    margin-top: 20px;
+    padding: 10px;
+}
+#social{
+        display: flex;
+        justify-content: space-between;
+color: white  ;
+width: 97%;
+}
+#rating{
+    display: flex;
+    gap: 10px;
+}
+#rating p{
+    margin-top: 0px;
+}
+#comments{
+    gap: 10px;
+    display: flex;
+}
+#comments p{
+    margin-top: 0px;
+}
+#color_size{
+    display: flex;
+    gap: 50px;
+    color: white;
+}
+#blackColor{
+    border: 2px solid white;
+    border-radius: 10px;
+}
+#redColor{
+    border: 2px solid white;
+    border-radius: 10px;
+    
+
+}
+
+
+#size{
+    gap: 5px;
+}
+
+#xs_size{
+    width: 60px;
+    height: 30px;
+    /* margin: 10px; */
+    border-radius: 5px;
+}
+
+#s_size{
+    width: 60px;
+    height: 30px;
+    /* margin: 10px; */
+    border-radius: 5px;
+
+
+}
+
+#m_size{
+    width: 60px;
+    height: 30px;
+    /* margin: 10px; */
+    border-radius: 5px;
+
+
+}
+
+
+
+
+
+
+
+#discount button{
+    
+background-color: red;
+border-radius: 5px;
+border-color: none;
+    margin-top: 9px;
+    height: 22px;
+    color: white;
+}
+
+
+#mrp{
+    text-decoration:line-through;
+    /* margin-bottom: 100px; */
+    /* width: 400px; */
+    color: rgb(213, 202, 202);
+}
+
+
+#price{
+    color: white;
+
+  /* //  margin-top: 20px; */
+
+}
+#price div{
+    display: flex;
+    gap: 20px;
+
+}
+#bottom button{
+    height: 40px;
+    /* width: 25%; */
+    border-radius: 5px;
+}
+
+#addToCart{
+    width: 160px;
+    background-color:red;
+    border-color: silver;
+    color: white;
+
+
+
+}
+
+#QuickOrder{
+    width: 160px;
+    background-color: #4c4848;
+    border-color: silver;
+    color: white;
+
+
+}
+#wishlist{
+    width: 50px;
+}
+
+
+
+#refresh{
+    width: 50px;
+}
+
+
+#paymentTop{
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+}
+#paymentTop h3{
+        margin-top: -2px;
+
+
+}
+
+
+
+
+#payment{
+    border: 1px solid silver;
+    height: 15%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+
+}
+
+
+
+
+#paymentBottom{
+display: flex;
+gap: 21px   ;
+
+
+}
+#paymentBottom div{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;        text-align: center;
+border: 1px solid silver;
+border-radius: 5px;
+
+}
+#paymentBottom img{
+width: 150px;
+height: 50px;
+}
+
+#selfDelivery_top{
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+}
+#selfDelivery_top h3{
+        margin-top: -2px;
+
+
+}
+
+#self_delivery{
+    border: 2px solid silver;
+    height: 18%;
+    width: 90%;
+    margin-top: 10px;
+     padding: 0px 30px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+#selfDelivery_bottom{
+
+    display: flex;
+
+}
+#selfDelivery_top{
+    display: flex;
+
+}
+
+#selfDelivery_box div{
+    display: flex;
+
+
+}
+#selfDelivery_bottom{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+   #selfDelivery_box {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;        text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+height: 25%;
+
+    
+
+}
+#greenText{
+    color: green;
+}
+
+
+
+
+
+#homeDelivery_top{
+    display: flex;
+    gap: 10px;
+    /* margin-top: 20px;     */
+}
+#homeDelivery_top h3{
+    margin-top:7px;
+
+
+}
+
+
+
+
+
+
+
+#homeDelivery_bottom{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    }
+#homeDelivery{
+    border: 2px solid silver;
+    height: 20%;
+    width: 92%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    /* margin-right: -1000px; */
+
+
+}
+#homeDelivery img{
+    width: 40px;
+    height: 40px;
+    padding: -20px;
+}
+#homeDelivery_bottom{
+    display: flex;
+    justify-content: flex-start;
+
+}
+#homeDelivery_bottom div{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;        text-align: center;
+
+text-align: center;
+    width: 150px;
+    height: 205px;
+    padding: 10px;
+border-radius: 5px;
+}
+
+
+
+#selfDelivery_location {
+    border: 1px solid silver;
+    height: 5%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+
+#warranty {
+    border: 1px solid silver;
+    height: 10%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+
+#exchange {
+    border: 1px solid silver;
+    height: 10%;
+    width: 90%;
+     padding: 0px 25px; 
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+#arrow{
+    justify-content: right;
+}
+
+
+#selfDelivery_location{
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;    
+    height: 40px;
+}
+#selfDelivery_location h3{
+    margin-top:0px;
+
+
+}
+
+#warranty{
+    height: 105px;
+
+    
+}
+
+#warranty div{
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;    
+    height: 25px;
+    padding-bottom: -10px;
+
+}
+#warranty h3{
+    margin-top:-2px;
+
+
+}
+#exchange{
+    height: 120px;
+}
+
+#exchange div{
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;    
+    height: 30px;
+}
+
+#exchange div i{
+
+    width: 20px;
+    height: 20px;
+
+border: 3px solid  #fbdf28;;
+}
+
+
+
+
+#exchange h3{
+    margin-top:2px;
+
+
+}
+
+/* *******************slider****************************************** */
+.slick-carousel{
+    margin-top: 100px;
+    text-align: start;
+    padding-left: 40px;
+}
+
+
+#img div h3{
+    margin-top: -20px;
+    padding-top: 30px;
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    text-align: center;
+}
+#img div h5{
+    margin-top: -20px;
+        /* margin-top: -20px; */
+
+    /* padding-top: 20px; */
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    text-align: center;
+    border-radius: 0px 0px 5px 5px;
+}
+
+
+
+
+
+/* Customize the Slick carousel for mobile devices */
+@media only screen and (max-width: 767px) {
+   
+ #parent{
+    display: flex;
+    flex-direction:column-reverse;
+ }
+
+  
+  #right{
+    width: 100%;
+    /* height: 200%; */
+}
+#left{
+    width: 100%;
+    /* height: 200%; */
+}
+#diffAngle img{
+
+    width: 40px;
+}
+#payment{
+    display: none;
+}
+#self_delivery{
+    display: none;
+
+
+}
+
+#charecterstics{
+    height: 400px;
+}
+#selfDelivery_location{
+    display: none;
+}
+#warranty{
+    display: none;
+}
+#homeDelivery{
+    display: none;
+}
+#exchange{
+    display: none;
+}
+
+
+.slick-carousel img{
+    height:80px;
+    width: 50px;
+
+}
+#img div h3{
+    height: 30px;
+    width: 50px;
+
+}
+#img div h5{
+    height: 40px;
+    width: 50px;
+
+}
+
+}
+
+
+
+  /* Customize the Slick carousel for tablet devices */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+    #right{
+        width: 45%;
+        height: 200%;
+    }
+    #left{
+        width: 45%;
+        height: 200%;
+    }
+#payment{
+    display: none;
+}
+#self_delivery{
+    display: none;
+
+
+}
+#description{
+    display: none;
+}
+#charecterstics{
+    height: 400px;
+}
+#reviews{
+    height: 22%;
+}
+#diffAngle img{
+
+        width: 40px;
+}
+
+#selfDelivery_location{
+    height: 50px;
+}
+#warranty{
+    height: 130px;
+}
+.slick-carousel img{
+    height: 200px;
+    width: 150px;
+
+}
+#img div h3{
+    height: 30px;
+    width: 150px;
+
+}
+#img div h5{
+    height: 40px;
+    width: 150px;
+
+}
+
+  }
+  
+  /* Customize the Slick carousel for desktop devices */
+  @media only screen and (min-width: 1024px) {
+    .slick-carousel {
+      margin: 0 auto;
+      width: 1000px;
+    }
+  
+    .slick-slide {
+      width: 350px;
+    }
+  
+    .slick-next::before, .slick-prev::before {
+      color: blue;
+    }
+  }
