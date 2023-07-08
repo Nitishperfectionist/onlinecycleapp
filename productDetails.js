@@ -1,20 +1,15 @@
   
-  let url ="https://slate-gray-fox-belt.cyclic.app/data" 
+  //let url ="https://slate-gray-fox-belt.cyclic.app/data" 
    
-   fetcho();
+  let data=JSON.parse(localStorage.getItem("wishlist"))
    
-   async function fetcho(){
-    try{
-        let res =await fetch(url);
-        let data=await res.json();
+  fetcho();
+   
+    function fetcho(){
         console.log(data)
         display(data)
 
-    }
-    catch(err){
-        console.log(err);
 
-    }
    }
 
 
