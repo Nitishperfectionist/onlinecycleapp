@@ -7,6 +7,86 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+// ========================== debouncing ========================================================================================
+
+// Function to perform the search based on the entered title
+// Function to perform the search based on the entered title
+function searchByTitle(title) {
+  // Check if the title is empty
+  if (title.trim() === "") {
+    // Clear the search results dropdown
+    renderSearchResults([]);
+    return;
+  }
+
+  // Fetch the JSON data
+  fetch("https://slate-gray-fox-belt.cyclic.app/data")
+    .then(response => response.json())
+    .then(data => {
+      // Filter the data based on the entered title
+      const results = data.filter(item =>
+        item.title.toLowerCase().includes(title.toLowerCase())
+      );
+
+      // Render search results in the dropdown
+      renderSearchResults(results);
+    })
+    .catch(error => {
+      console.error("Error fetching data:", error);
+    });
+}
+
+// Function to render search results in the dropdown
+function renderSearchResults(results) {
+  const searchResultsDropdown = document.getElementById("search-results");
+
+  // Clear the search results dropdown
+  searchResultsDropdown.innerHTML = "";
+
+  // Hide the search results box if the results array is empty
+  if (results.length === 0) {
+    searchResultsDropdown.style.display = "none";
+    return;
+  }
+
+  // Show the search results box
+  searchResultsDropdown.style.display = "block";
+
+  // Create and append option elements for each result
+  results.forEach(result => {
+    const option = document.createElement("option");
+    option.value = result.id;
+    option.textContent = result.title;
+    searchResultsDropdown.appendChild(option);
+  });
+}
+
+function debounce(func, delay) {
+  let timeoutId;
+
+  return function(...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
+function handleSearchInput(event) {
+  const enteredTitle = event.target.value;
+  debouncedSearch(enteredTitle);
+}
+
+const searchInput = document.getElementById("search-input");
+const searchResultsDropdown = document.getElementById("search-results");
+
+const debounceDelay = 500;
+const debouncedSearch = debounce(searchByTitle, debounceDelay);
+
+searchInput.addEventListener("keyup", handleSearchInput);
+
+
 // Import the functions you need from the SDKs you need
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";

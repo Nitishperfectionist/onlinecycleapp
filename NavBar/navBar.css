@@ -4,6 +4,8 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -73,8 +75,26 @@ nav ul li a {
   margin: 10px;
   max-height: 300px;
   overflow-y: auto;
+  overflow-x: hidden;
+}
+.sub-menu::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f1f1f1;
 }
 
+.sub-menu::-webkit-scrollbar-thumb {
+  background-color: #ebe7e7;
+  border-radius: 4px;
+}
+
+.sub-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #928e8e;
+}
+
+.sub-menu::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
 .user-info {
   display: flex;
   align-items: center;
@@ -135,11 +155,72 @@ nav ul li a {
   font-weight: 600;
 }
 .search-bar {
+  position: relative;
   display: flex;
   align-items: center;
   border: 1px solid #c68709;
   border-radius: 10px;
 }
+
+
+#search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 300px;
+}
+
+#search-results {
+  display: none; /* Hide the search results box by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px; /* Set the maximum height for the dropdown */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+}
+
+#search-results.show {
+  display: block; /* Show the search results box when there are results */
+}
+
+#search-results option {
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+#search-results option:hover {
+  background-color: #f5f5f5;
+}
+
+/* Hide the scrollbar */
+#search-results::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f1f1f1;
+}
+
+#search-results::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+#search-results::-webkit-scrollbar-thumb {
+  background-color: #ebe7e7;
+  border-radius: 4px;
+}
+
+#search-results::-webkit-scrollbar-thumb:hover {
+  background-color: #928e8e;
+}
+
+
 
 #nav_search_userpro {
   display: flex;
