@@ -1,0 +1,238 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: -3%;
+}
+
+form {
+  width: 20%;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  padding: 5%;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 95%;
+  padding: 15px;
+  margin-bottom: 5%;
+  border: 1px solid #414141;
+  border-radius: 8px;
+  
+}
+
+button {
+ width: 100%;
+  margin: auto; /* Center the button */
+  margin-top: 10%;
+  background-color: #252525;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #ed1c24;
+}
+
+.password-toggle {
+  position: relative;
+}
+
+.password-toggle span {
+  position: absolute;
+  right: -1%;
+  top: 45%;
+  cursor: pointer;
+  color: #999;
+}
+
+.password-strength {
+  display: flex;
+  align-items:center;
+  margin-top: -2%;
+  margin-bottom: 4%;
+  width: 80%;
+  
+}
+
+.meter {
+  height: 5px;
+  background-color: #ccc;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.text {
+  width: 43%;
+  margin-left: 10px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  font-size: 16px;
+}
+
+.password-weak .meter {
+  width: 10%;
+  background-color: red;
+}
+
+.password-medium .meter {
+  width: 60%;
+  background-color: orange;
+}
+
+.password-strong .meter {
+  width: 100%;
+  background-color: green;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: -3%;
+  margin-bottom: 4%;
+}
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  border: 10px solid #000;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+p {
+  margin-top: 5%;
+  font-size: 12px;
+  text-align: center;
+}
+#login {
+  margin-top: 5%;
+  font-size: 16px;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: -3%;
+  margin-bottom: 4%;
+}
+ /* CSS for the popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  opacity: 0;
+  animation: popupAnimation 0.5s ease forwards;
+  width: 60%; /* Adjust the width as per your requirement */
+  max-width: 600px;/* Set a maximum width for responsiveness */
+}
+
+.popup h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+.loading-gif {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.popup p {
+  margin-bottom: 0;
+  color: #666;
+  font-size: 18px;
+  text-align: center;
+}
+
+@keyframes popupAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* responsive */
+@media (min-width:100px) and (max-width:200px) {
+  form {
+    width: 70%;
+    margin: auto;
+  }
+}
+@media (min-width:300px) and (max-width:800px) {
+  form {
+    width: 70%;
+    margin: auto;
+  }
+  h2 {
+    margin-bottom: 1%;
+  }
+  .popup {
+    width: 70%;
+  }
+.text {
+ width: 30%;
+}
+}
+@media (min-width:700px) and (max-width:1200px) {
+  form {
+    width: 70%;
+    margin: auto;
+  }
+  .popup {
+    width: 70%;
+  }
+  .text {
+ width: 25%;
+  
+}
+.password-toggle span {
+ 
+ right: 1%;
+  top: 40%;
+  cursor: pointer;
+  color: #999;
+}
+
+}

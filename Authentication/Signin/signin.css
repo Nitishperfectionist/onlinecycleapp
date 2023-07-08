@@ -1,0 +1,235 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 20px;
+  
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: -3%;
+}
+
+form {
+  width: 20%;
+  margin: auto;
+  background-color: #fff;
+  
+  border-radius: 5px;
+  padding: 5%;
+  
+ 
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 95%;
+  padding: 15px;
+  margin-bottom: 5%;
+  border: 1px solid #414141;
+  border-radius: 8px;
+  
+}
+
+button {
+ 
+  width: 100%;
+  margin: auto; /* Center the button */
+  margin-top: 10%;
+  background-color: #252525;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  
+}
+
+button:hover {
+  background-color: #ed1c24;
+}
+
+.password-toggle {
+  position: relative;
+}
+
+.password-toggle span {
+  position: absolute;
+  right: -2%;
+  top: 45%;
+  cursor: pointer;
+  color: #999;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  border: 10px solid #000;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-right: 5px;
+  align-items: center;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  font-weight: normal;
+  color: #252525;
+}
+
+p {
+  margin-top: 5%;
+  font-size: 12px;
+  text-align: center;
+  color: #999;
+}
+#signup {
+  margin-top: 10%;
+  font-size: 16px;
+  text-align: center;
+  color: #252525;
+}
+#signup a {
+color: #252525;
+font-weight: 700;
+}
+
+.remember-forgot {
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  font-size: 12px;
+}
+
+.forgot-password {
+color: #252525;
+font-size: 12px;
+}
+
+/* CSS for the popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  opacity: 0;
+  animation: popupAnimation 0.5s ease forwards;
+  width: 80%; /* Adjust the width as per your requirement */
+  max-width: 600px; /* Set a maximum width for responsiveness */
+}
+
+.popup h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+.loading-gif {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.popup p {
+  margin-bottom: 0;
+  color: #666;
+  font-size: 18px;
+  text-align: center;
+}
+
+@keyframes popupAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+/* responsive */
+@media (min-width: 100px) and (max-width: 200px) {
+  form {
+    width: 70%;
+    margin: auto;
+  }
+}
+@media (min-width: 300px) and (max-width: 800px) {
+  form {
+    width: 70%;
+    margin: auto;
+    
+  }
+  .password-toggle span {
+    position: absolute;
+    right: -1%;
+    top: 50%;
+    cursor: pointer;
+    color: #999;
+  }
+
+  h2 {
+    margin-bottom: 5%;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .popup {
+    width: 70%;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+  form {
+    width: 70%;
+    margin: auto;
+  }
+  .password-toggle span {
+    position: absolute;
+    right: 1%;
+    top: 40%;
+    cursor: pointer;
+    color: #999;
+  }
+  h2 {
+    margin-bottom: 2%;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+  }
+  p {
+  margin-top: 5%;
+  font-size: 16px;
+  text-align: center;
+  color: #999;
+}
+.forgot-password {
+font-size: 16px;
+}
+.checkbox-label {
+  font-size: 15px;
+}
+.popup {
+    width: 70%;
+  }
+}
